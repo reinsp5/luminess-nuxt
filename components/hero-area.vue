@@ -16,9 +16,7 @@ const getImageUrl = computed(() => (name: String) => {
 </script>
 
 <template>
-  <vueper-slides class="no-shadow aspect-video" fade autoplay>
-    <vueper-slide v-for="slide in slides" :key="slide" :image="getImageUrl(slide)" />
-  </vueper-slides>
+  <h1>hogehoge</h1>
 </template>
 
 <style scoped>
