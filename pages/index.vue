@@ -1,8 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="container mx-auto">
-    <hero-area />
+  <main class="container mx-auto my-10 px-4">
     <div class="my-5 flex flex-col w-full lg:flex-row">
       <NuxtLink
         to="/about"
@@ -24,7 +23,7 @@
         </div>
       </NuxtLink>
     </div>
-  </div>
+  </main>
 </template>
 
 <style scoped></style>
