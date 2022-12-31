@@ -1,0 +1,25 @@
+name: Deployment to FirebaseHosting
+
+on:
+  repository_dispatch:
+    types: [update_blog]
+jobs:
+  build:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/Checkout@2
+
+      - name: Configure FirebaseHosting Credentials
+
+      - name: Build
+        run: |
+          npm install
+          npm run build
+          npm run generate
+      
+      - name: Deploy
+        run: firebase deploy
+
