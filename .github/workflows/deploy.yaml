@@ -1,7 +1,5 @@
 name: Deployment to FirebaseHosting
-on:
-  repository_dispatch:
-    types: [update_site]
+on: workflow_dispatch
 jobs:
   build_and_deploy:
     runs-on: ${{ matrix.os }}
