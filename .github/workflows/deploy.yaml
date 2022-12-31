@@ -1,25 +1,37 @@
 name: Deployment to FirebaseHosting
-
 on:
   repository_dispatch:
-    types: [update_blog]
+    types: [update_site]
 jobs:
-  build:
-    name: Build & Deploy
-    runs-on: ubuntu-latest
-    
+  build_and_deploy:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [16]
     steps:
-      - name: Checkout
-        uses: actions/Checkout@2
+      - uses: actions/checkout@v3
 
-      - name: Configure FirebaseHosting Credentials
+      - name: Cache
+        id: node_modules_cache_id
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/package-lock.json')) }}
 
-      - name: Build
+      - name: Install
+        if: steps.node_modules_cache_id.outputs.cache-hit != 'true'
         run: |
-          npm install
+          npm ci
+
+      - name: Generate
+        run: |
           npm run build
           npm run generate
-      
-      - name: Deploy
-        run: firebase deploy
 
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_LUMINESS_WEB_25CBF }}"
+          channelId: live
+          projectId: luminess-web-25cbf
