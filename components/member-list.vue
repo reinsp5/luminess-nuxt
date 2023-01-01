@@ -57,12 +57,12 @@ const domain = "https://cms.luminess.games";
   <div
     v-for="member in members?.data"
     :key="member.id"
-    class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden"
+    class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden border border-solid"
   >
     <figure class="w-full">
       <img class="w-full aspect-video" :src="`${domain}${member.avatar.url}`" />
     </figure>
-    <div class="mx-4 my-8 lg:m-0">
+    <div class="px-2 pt-4 pb-8 lg:p-8">
       <!-- メンバー名 -->
       <div class="flex">
         <h1 class="w-max ml-4 text-2xl lg:text-3xl xl:text-4xl font-bold">

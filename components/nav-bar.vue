@@ -6,7 +6,7 @@ const switchDrawerOpen = () => {
 </script>
 
 <template>
-  <nav class="navbar">
+  <nav class="navbar bg-base-100">
     <div class="flex-none lg:hidden">
       <button class="btn btn-square btn-ghost" @click="switchDrawerOpen">
         <Icon name="ic:baseline-menu" size="30" />

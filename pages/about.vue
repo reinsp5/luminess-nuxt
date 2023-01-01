@@ -4,20 +4,48 @@
   <main class="container mx-auto my-10 px-4">
     <h1 class="text-4xl font-bold">このサイトについて</h1>
     <article class="my-8 text-sm lg:text-md xl:text-lg">
-      <p class="my-4">
-        このサイトは、チームマスターであるLuminessのチームサイト兼レインの実験場です。<br />
-        製作者のレインは普段、非Web系のエンジニアなのでWebサイトを作る事はありません。<br />
-        しかし、Webサイトを作るのは好きなので、暇を見つけては作って遊んでいます。
-      </p>
-      <p class="my-4">
-        このサイトは、レインが気になった技術やプロダクトを使って作成されており、コロコロ内容が変わるのはご容赦くださいm(_
-        _)m
-      </p>
-      <p class="my-8">ちなみに、現在このサイトには以下が使われています。</p>
+      <!-- レイン -->
+      <div
+        class="my-20 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden border border-solid"
+      >
+        <figure class="p-8 w-full">
+          <img
+            class="mx-auto w-96"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEUkI6t2xPxD_4-1mgY83MvIrp59XsRISqoBi3uPkvId52CkGoEVaB-RbEQNtQty_vR7aCTax-Jhmf8WiM40_frZlC9uErJIHWhNSN9qK-2WvGnyAaA6zVQTq_BLDjWf1kChORzb8Ge3bE289m9Gfepd=s1500-no?authuser=0"
+          />
+        </figure>
+        <div class="mx-8 my-8">
+          <h1 class="w-max text-3xl lg:text-4xl font-bold">レイン（管理者）</h1>
+          <p class="my-4">
+            チームLuminessのチームマスターで、当サイトの管理者。
+          </p>
+          <p class="my-4">
+            普段はレガシーな分野のシステムエンジニアをする傍ら、プライベートでモダンな技術に触れて遊んでいるよ！<br />
+          </p>
+          <p class="my-4">
+            <span class="text-sm text-gray-400">
+              レガシー分野は正直つまらん… ε-(‐ω‐；)
+            </span>
+          </p>
+          <p class="my-4">
+            新しいものが大好きで、気になったらとりあえず試して見る精神。<br />
+            その結果、実はLuminessのサイトはこれが三代目です。
+          </p>
+          <p class="my-4">
+            最初はLaravelで構築し、ヘッドレスCMSを知ってからはVue.jsを使ってSPAとして作成したり。<br>
+            そして、今回はJamstackの練習を兼ねてNuxtを使って作り直しました・ω・
+          </p>
+          <p class="my-8">
+            ちなみに、左のアイコンは当チームのマネージャーで、PSO2における腹心の相棒
+            <a class="font-bold hover:underline" href="https://twitter.com/ramyusu_aurasu">クラレント</a>
+            さん作です。
+          </p>
+        </div>
+      </div>
 
       <!-- Jamstack -->
       <div
-        class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden"
+        class="mt-20 mb-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden border border-solid"
       >
         <figure class="p-8 w-full">
           <img
@@ -58,7 +86,7 @@
 
       <!-- Nuxt3 -->
       <div
-        class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden"
+        class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden border border-solid"
       >
         <figure class="p-8 w-full">
           <img
@@ -89,7 +117,7 @@
 
       <!-- Strapi -->
       <div
-        class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden"
+        class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden border border-solid"
       >
         <figure class="p-8 w-full">
           <img
@@ -122,7 +150,7 @@
 
       <!-- tailwindcss -->
       <div
-        class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden"
+        class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden border border-solid"
       >
         <figure class="p-8 w-full">
           <img
@@ -158,7 +186,7 @@
 
       <!-- daisyui -->
       <div
-        class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden"
+        class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden border border-solid"
       >
         <figure class="p-8 w-full">
           <img
@@ -196,7 +224,7 @@
 
       <!-- firebase -->
       <div
-        class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden"
+        class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden border border-solid"
       >
         <figure class="p-8 w-full">
           <img
@@ -229,7 +257,7 @@
 
       <!-- Docker -->
       <div
-        class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden"
+        class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden border border-solid"
       >
         <figure class="p-8 w-full grid grid-cols-1 items-center">
           <img class="w-full" src="@/assets/docker-logo.webp" />
@@ -258,7 +286,7 @@
 
       <!-- Github -->
       <div
-        class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden"
+        class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden border border-solid"
       >
         <figure class="p-8 w-full grid grid-cols-1 items-center">
           <img class="w-full" src="@/assets/github-logo.svg" />
