@@ -50,8 +50,8 @@ const switchDrawerOpen = () => {
       :class="isDrawerOpen ? 'drawer-open shadow-lg' : 'drawer-close'"
     >
       <div class="w-full h-full grid grid-cols-1">
-        <ul class="divide-y" @click="switchDrawerOpen">
-          <li class="p-4">
+        <ul class="divide-y menu menu-vertical px-1" @click="switchDrawerOpen">
+          <li>
             <NuxtLink to="/">
               <div class="flex items-center">
                 <Icon class="mr-2" name="material-symbols:home" size="30" />
@@ -59,7 +59,7 @@ const switchDrawerOpen = () => {
               </div>
             </NuxtLink>
           </li>
-          <li class="p-4">
+          <li>
             <NuxtLink to="/about">
               <div class="flex items-center">
                 <Icon class="mr-2" name="material-symbols:info" size="30" />
@@ -67,7 +67,7 @@ const switchDrawerOpen = () => {
               </div>
             </NuxtLink>
           </li>
-          <li class="p-4">
+          <li>
             <NuxtLink to="/members">
               <div class="flex items-center">
                 <Icon class="mr-2" name="bi:people-fill" size="30" />
@@ -79,7 +79,7 @@ const switchDrawerOpen = () => {
       </div>
     </div>
     <div
-      class="fixed top-0 left-0 w-screen h-screen z-40 duration-100 ease-linear"
+      class="lg:hidden fixed top-0 left-0 w-screen h-screen z-40 duration-100 ease-linear"
       :class="isDrawerOpen ? 'drawer-open bg-gray-900 opacity-75' : 'invisible'"
       @click="switchDrawerOpen"
     />
