@@ -6,7 +6,7 @@
     <article class="my-8 text-sm lg:text-md xl:text-lg">
       <!-- レイン -->
       <div
-        class="my-20 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden border border-solid"
+        class="my-20 grid lg:grid-cols-2 place-items-center shadow-md rounded-xl overflow-hidden border border-solid"
       >
         <figure class="p-8 w-full">
           <img
