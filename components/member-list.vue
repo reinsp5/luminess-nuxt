@@ -32,26 +32,45 @@ const query = qs.stringify(
   }
 );
 
+const posClass = (value: String) => {
+  if (!value) return;
+  switch (value) {
+    case "master":
+      return "bg-blue-800";
+    case "manager":
+      return "bg-teal-800";
+    case "common":
+      return "bg-rose-800";
+    case "visitor":
+      return "bg-blue-500";
+  }
+};
+
 const { data: members } = await useFetch(
-  `https://cms.luminess.games/api/members?${query}`
+  `https://cms.luminess.games/api/members?${query}&sort[0]=id`
 );
 const domain = "https://cms.luminess.games";
 // const avatar = computed((value) => domain + value.data?.avatar.url);
 </script>
 
 <template>
-  <div v-for="member in members?.data" class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden">
+  <div
+    v-for="member in members?.data"
+    :key="member.id"
+    class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden"
+  >
     <figure class="w-full">
       <img class="w-full aspect-video" :src="`${domain}${member.avatar.url}`" />
     </figure>
     <div class="mx-4 my-8 lg:m-0">
       <!-- メンバー名 -->
       <div class="flex">
-        <h1 class="w-max ml-4 text-3xl lg:text-4xl font-bold">
+        <h1 class="w-max ml-4 text-2xl lg:text-3xl xl:text-4xl font-bold">
           {{ member.name }}
         </h1>
         <div
-          class="ml-4 py-1 px-4 text-xl bg-blue-500 text-white rounded-3xl w-max"
+          class="ml-4 py-1 px-4 text-md lg:text-xl text-white rounded-3xl w-max"
+          :class="posClass(member.position.short)"
         >
           {{ member.position.name }}
         </div>
@@ -61,7 +80,9 @@ const domain = "https://cms.luminess.games";
       <div class="ml-4 mt-8 lg:mt-10">
         <!-- 使用クラス -->
         <div class="mt-4 flex items-center">
-          <span class="inline-block w-30 text-xl mr-2">使用クラス</span>
+          <span class="inline-block w-30 text-md lg:text-lg mr-2"
+            >使用クラス</span
+          >
           <img
             class="mx-2 w-7 lg:w-10 inline"
             v-for="useClass in member.classes"
@@ -72,7 +93,9 @@ const domain = "https://cms.luminess.games";
         </div>
         <!-- 使用プラットフォーム -->
         <div class="mt-4 flex items-center">
-          <span class="inline-block w-30 text-xl mr-2">プレイ環境</span>
+          <span class="inline-block w-30 text-md lg:text-lg mr-2"
+            >プレイ環境</span
+          >
           <img
             class="mx-2 w-7 lg:w-10 inline"
             v-for="usePlatform in member.platforms"

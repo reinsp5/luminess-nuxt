@@ -1,7 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
-  <nav class="navbar bg-base-100">
+  <nav class="navbar">
     <div class="flex-none lg:hidden">
       <button class="btn btn-square btn-ghost">
         <Icon name="ic:baseline-menu" size="30" />

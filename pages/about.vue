@@ -3,7 +3,7 @@
 <template>
   <main class="container mx-auto my-10 px-4">
     <h1 class="text-4xl font-bold">このサイトについて</h1>
-    <article class="my-8 text-xl">
+    <article class="my-8 text-sm lg:text-md xl:text-lg">
       <p class="my-4">
         このサイトは、チームマスターであるLuminessのチームサイト兼レインの実験場です。<br />
         製作者のレインは普段、非Web系のエンジニアなのでWebサイトを作る事はありません。<br />
@@ -26,7 +26,15 @@
           />
         </figure>
         <div class="mx-8 my-8">
-          <h1 class="w-max text-3xl lg:text-4xl font-bold">Jamstack</h1>
+          <h1 class="w-max text-3xl lg:text-4xl font-bold">
+            <a
+              href="https://jamstack.org"
+              target="_blank"
+              class="hover:underline"
+            >
+              Jamstack
+            </a>
+          </h1>
           <p class="my-4">
             Jamstackは、現在レインが興味を持っているサイト運営上の概念です。<br />
             JamstackのJamは、JavaScript(J), API(A), Markup(M)の略だそうです。<br />
@@ -59,7 +67,11 @@
           />
         </figure>
         <div class="mx-8 my-8">
-          <h1 class="w-max text-3xl lg:text-4xl font-bold">Nuxt.js (Nuxt3)</h1>
+          <h1 class="w-max text-3xl lg:text-4xl font-bold">
+            <a href="https://nuxt.com" target="_blank" class="hover:underline">
+              Nuxt.js (Nuxt3)
+            </a>
+          </h1>
           <p class="my-4">
             元々、レインはVue.jsを使ってWebサイトを作って遊んだり、Electronと組み合わせてスタンドアローンのソフトウェアを
             作ったりしていました。
@@ -86,7 +98,11 @@
           />
         </figure>
         <div class="mx-8 my-8">
-          <h1 class="w-max text-3xl lg:text-4xl font-bold">Strapi</h1>
+          <h1 class="w-max text-3xl lg:text-4xl font-bold">
+            <a href="https://strapi.io" target="_blank" class="hover:underline">
+              Strapi
+            </a>
+          </h1>
           <p class="my-4">Strapiは、ヘッドレスCMSです。</p>
           <p class="my-4">
             Jamstackを実現する上で、コンテンツ管理（記事や画像等々）をヘッドレスCMS化することは必須のようです。
@@ -115,7 +131,15 @@
           />
         </figure>
         <div class="mx-8 my-8">
-          <h1 class="w-max text-3xl lg:text-4xl font-bold">tailwindcss</h1>
+          <h1 class="w-max text-3xl lg:text-4xl font-bold">
+            <a
+              href="https://tailwindcss.com"
+              target="_blank"
+              class="hover:underline"
+            >
+              tailwindcss
+            </a>
+          </h1>
           <p class="my-4">tailwindcssは、CSSフレームワークです。</p>
           <p class="my-4">
             予め定義されているCSSのクラスを使用して、手軽にレスポンシブ対応で高デザインのWebサイトを構築できます。
@@ -143,7 +167,15 @@
           />
         </figure>
         <div class="mx-8 my-8">
-          <h1 class="w-max text-3xl lg:text-4xl font-bold">daisyUI</h1>
+          <h1 class="w-max text-3xl lg:text-4xl font-bold">
+            <a
+              href="https://daisyui.com"
+              target="_blank"
+              class="hover:underline"
+            >
+              daisyUI
+            </a>
+          </h1>
           <p class="my-4">
             daisyUIは、tailwindcssのコンポーネントライブラリです。
           </p>
@@ -173,7 +205,15 @@
           />
         </figure>
         <div class="mx-8 my-8">
-          <h1 class="w-max text-3xl lg:text-4xl font-bold">Firebase Hosting</h1>
+          <h1 class="w-max text-3xl lg:text-4xl font-bold">
+            <a
+              href="https://firebase.google.com"
+              target="_blank"
+              class="hover:underline"
+            >
+              Firebase Hosting
+            </a>
+          </h1>
           <p class="my-4">
             Firebase
             Hostingは、Googleが運営しているBaaS「Firebase」の数あるサービスの中で、静的サイトホスティングをしてくれるサービスです。
@@ -195,7 +235,15 @@
           <img class="w-full" src="@/assets/docker-logo.webp" />
         </figure>
         <div class="mx-8 my-8">
-          <h1 class="w-max text-3xl lg:text-4xl font-bold">Docker</h1>
+          <h1 class="w-max text-3xl lg:text-4xl font-bold">
+            <a
+              href="https://www.docker.com"
+              target="_blank"
+              class="hover:underline"
+            >
+              Docker
+            </a>
+          </h1>
           <p class="my-4">Dockerは、コンテナ化技術として有名です。</p>
           <p class="my-4">
             当ページでは、Strapiを稼働させるためにDockerを使用しています。
@@ -216,7 +264,15 @@
           <img class="w-full" src="@/assets/github-logo.svg" />
         </figure>
         <div class="mx-8 my-8">
-          <h1 class="w-max text-3xl lg:text-4xl font-bold">Github Actions</h1>
+          <h1 class="w-max text-3xl lg:text-4xl font-bold">
+            <a
+              href="https://github.co.jp/features/actions"
+              target="_blank"
+              class="hover:underline"
+            >
+              Github Actions
+            </a>
+          </h1>
           <p class="my-4">
             Github Actionsは、Githubが展開するCI/CDツールです。
           </p>
@@ -224,10 +280,12 @@
             Githubのリポジトリと連動して、専用のWorkflowsフォルダに入れたYAMLファイル上に記載したとおりにCI/CDを行ってくれます。
           </p>
           <p class="my-8">
-            当サイトでは、mainリポジトリを更新した場合、Strapi上でコンテンツを変更した場合（チームメンバーを編集した等）にGithub Actionsでワークフローが走ります。
+            当サイトでは、mainリポジトリを更新した場合、Strapi上でコンテンツを変更した場合（チームメンバーを編集した等）にGithub
+            Actionsでワークフローが走ります。
           </p>
           <p class="my-4">
-            それにより、新しく静的サイトが生成し直され、Firebase Hostingへデプロイされる流れとなっています。
+            それにより、新しく静的サイトが生成し直され、Firebase
+            Hostingへデプロイされる流れとなっています。
           </p>
         </div>
       </div>

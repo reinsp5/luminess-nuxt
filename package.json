@@ -16,7 +16,6 @@
     "nuxt-icon": "^0.1.8"
   },
   "dependencies": {
-    "qs": "^6.11.0",
-    "vueperslides": "^3.5.1"
+    "qs": "^6.11.0"
   }
 }
