@@ -8,7 +8,7 @@ const switchDrawerOpen = () => {
 <template>
   <nav class="navbar bg-base-100">
     <div class="flex-none lg:hidden">
-      <button class="btn btn-square btn-ghost" @click="switchDrawerOpen">
+      <button class="btn btn-square btn-ghost" title="Open Drawer Menu" @click="switchDrawerOpen">
         <Icon name="ic:baseline-menu" size="30" />
       </button>
     </div>
