@@ -60,12 +60,7 @@ const domain = "https://cms.luminess.games";
     class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden border border-solid"
   >
     <figure class="w-full">
-      <nuxt-img
-        class="aspect-video"
-        sizes="sm:100vw md:50vw lg:400px"
-        :alt="member.name"
-        :src="`${domain}${member.avatar.url}`"
-      />
+      <img class="w-full aspect-video" :alt="member.name" :src="`${domain}${member.avatar.url}`" />
     </figure>
     <div class="px-2 pt-4 pb-8 lg:p-8">
       <!-- メンバー名 -->
