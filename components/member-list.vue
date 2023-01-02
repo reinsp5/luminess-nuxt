@@ -60,7 +60,7 @@ const domain = "https://cms.luminess.games";
     class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden border border-solid"
   >
     <figure class="w-full">
-      <img class="w-full aspect-video" :src="`${domain}${member.avatar.url}`" />
+      <img class="w-full aspect-video" loading="lazy" :src="`${domain}${member.avatar.url}`" />
     </figure>
     <div class="px-2 pt-4 pb-8 lg:p-8">
       <!-- メンバー名 -->

@@ -11,6 +11,7 @@
         <figure class="p-8 w-full">
           <img
             class="mx-auto w-96"
+            loading="lazy"
             src="https://lh3.googleusercontent.com/pw/AL9nZEUkI6t2xPxD_4-1mgY83MvIrp59XsRISqoBi3uPkvId52CkGoEVaB-RbEQNtQty_vR7aCTax-Jhmf8WiM40_frZlC9uErJIHWhNSN9qK-2WvGnyAaA6zVQTq_BLDjWf1kChORzb8Ge3bE289m9Gfepd=s1500-no?authuser=0"
           />
         </figure>
