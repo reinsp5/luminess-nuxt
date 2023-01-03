@@ -84,7 +84,7 @@ const domain = "https://cms.luminess.games";
             >使用クラス</span
           >
           <img
-            class="mx-2 w-7 lg:w-10 inline"
+            class="mx-2 w-7 h-auto lg:w-10 inline"
             v-for="useClass in member.classes"
             :key="useClass.id"
             :src="`${domain}${useClass.icon.url}`"
@@ -97,7 +97,7 @@ const domain = "https://cms.luminess.games";
             >プレイ環境</span
           >
           <img
-            class="mx-2 w-7 lg:w-10 inline"
+            class="mx-2 w-7 h-auto lg:w-10 inline"
             v-for="usePlatform in member.platforms"
             :key="usePlatform.id"
             :src="`${domain}${usePlatform.icon.url}`"
