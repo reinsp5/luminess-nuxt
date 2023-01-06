@@ -12,7 +12,7 @@
           <img
             class="mx-auto w-96"
             loading="lazy"
-            src="https://lh3.googleusercontent.com/pw/AL9nZEUkI6t2xPxD_4-1mgY83MvIrp59XsRISqoBi3uPkvId52CkGoEVaB-RbEQNtQty_vR7aCTax-Jhmf8WiM40_frZlC9uErJIHWhNSN9qK-2WvGnyAaA6zVQTq_BLDjWf1kChORzb8Ge3bE289m9Gfepd=s1500-no?authuser=0"
+            src="@/assets/IMG_1184.webp"
           />
         </figure>
         <div class="mx-8 my-8">
@@ -33,12 +33,16 @@
             その結果、実はLuminessのサイトはこれが三代目です。
           </p>
           <p class="my-4">
-            最初はLaravelで構築し、ヘッドレスCMSを知ってからはVue.jsを使ってSPAとして作成したり。<br>
+            最初はLaravelで構築し、ヘッドレスCMSを知ってからはVue.jsを使ってSPAとして作成したり。<br />
             そして、今回はJamstackの練習を兼ねてNuxtを使って作り直しました・ω・
           </p>
           <p class="my-8">
             ちなみに、左のアイコンは当チームのマネージャーで、PSO2における腹心の相棒
-            <a class="font-bold hover:underline" href="https://twitter.com/ramyusu_aurasu">クラレント</a>
+            <a
+              class="font-bold hover:underline"
+              href="https://twitter.com/ramyusu_aurasu"
+              >クラレント</a
+            >
             さん作です。
           </p>
         </div>

@@ -15,6 +15,10 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "ja",
         "data-theme": "corporate",
+        class: "h-full",
+      },
+      bodyAttrs: {
+        class: "h-full",
       },
     },
   },
