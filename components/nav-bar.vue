@@ -8,12 +8,18 @@ const switchDrawerOpen = () => {
 <template>
   <nav class="navbar bg-base-100">
     <div class="flex-none lg:hidden">
-      <button class="btn btn-square btn-ghost" title="Open Drawer Menu" @click="switchDrawerOpen">
+      <button
+        class="btn btn-square btn-ghost"
+        title="Open Drawer Menu"
+        @click="switchDrawerOpen"
+      >
         <Icon name="ic:baseline-menu" size="30" />
       </button>
     </div>
     <div class="flex-1">
-      <NuxtLink class="ml-2 text-xl font-bold" to="/">Luminess</NuxtLink>
+      <NuxtLink class="ml-2 text-xl font-bold" to="/">
+        <img class="h-10 lg:h-16 max-h-16" src="@/assets/luminess_logo.svg" alt="" />
+      </NuxtLink>
     </div>
     <div class="flex-none hidden lg:block">
       <ul class="menu menu-horizontal px-1">

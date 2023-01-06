@@ -17,6 +17,7 @@
     "nuxt-icon": "^0.1.8"
   },
   "dependencies": {
-    "qs": "^6.11.0"
+    "qs": "^6.11.0",
+    "vue3-carousel": "^0.2.9"
   }
 }

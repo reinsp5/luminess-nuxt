@@ -3,7 +3,7 @@
 <template>
   <div class="lg:container mx-auto">
     <nav-bar />
-    <div class="mt-20">
+    <div>
       <slot />
     </div>
   </div>
