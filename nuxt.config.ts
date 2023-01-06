@@ -31,7 +31,7 @@ export default defineNuxtConfig({
         {
           name: "twitter:image",
           content:
-            "https://cms.luminess.games/uploads/twitter_preview_666d98f4cc.webp",
+            "https://cms.luminess.games/uploads/twitter_preview_beff7dcb7f.webp",
         },
       ],
       htmlAttrs: {
