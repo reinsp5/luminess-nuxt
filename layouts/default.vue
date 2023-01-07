@@ -11,7 +11,7 @@
     <footer class="sticky footer p-10 bg-slate-900 text-neutral-content">
       <div>
         <img
-          class="w-96 max-w-full"
+          class="w-96 max-w-full h-auto"
           src="@/assets/luminess_logo_white.svg"
           alt="luminess logo"
         />
@@ -20,10 +20,10 @@
       <div>
         <span class="footer-title">Social</span>
         <div class="grid grid-flow-col gap-4">
-          <a href="https://twitter.com/reinsp5" target="_blank">
+          <a href="https://twitter.com/reinsp5" target="_blank" aria-label="レインのTwitterアカウント">
             <Icon name="mdi:twitter" size="40" />
           </a>
-          <a href="https://github.com/reinsp5">
+          <a href="https://github.com/reinsp5" aria-label="レインのGithubプロフィール">
             <Icon name="mdi:github" size="40" />
           </a>
         </div>
