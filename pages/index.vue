@@ -26,7 +26,14 @@ const { data: images } = await useFetch(
       :pause-autoplay-on-hover="true"
     >
       <Slide v-for="image in images.data" :key="image.id">
-        <img class="w-full h-auto aspect-video" :src="config.cmsBase + image.image.url" :alt="image.image.name" />
+        <img
+          class="w-full h-auto aspect-video"
+          :alt="image.image.name"
+          :srcset="`${config.cmsBase + image.image.formats?.small.url} 320w, 
+                    ${config.cmsBase + image.image.formats?.medium.url} 640w, 
+                    ${config.cmsBase + image.image.formats?.large.url} 1280w, 
+                    ${config.cmsBase + image.image.url} 2000w,`"
+        />
       </Slide>
     </Carousel>
     <div class="my-5 flex flex-col w-full lg:flex-row">
