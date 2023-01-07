@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import qs from "qs";
 
+const config = useRuntimeConfig();
 const query = qs.stringify(
   {
     fields: ["name"],
@@ -45,11 +46,9 @@ const posClass = (value: String) => {
       return "bg-blue-500";
   }
 };
-
 const { data: members } = await useFetch(
-  `https://cms.luminess.games/api/members?${query}&sort[0]=id`
+  `${config.apiBase}/members?${query}&sort[0]=id`
 );
-const domain = "https://cms.luminess.games";
 // const avatar = computed((value) => domain + value.data?.avatar.url);
 </script>
 
@@ -60,7 +59,11 @@ const domain = "https://cms.luminess.games";
     class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden border border-solid"
   >
     <figure class="w-full">
-      <img class="w-full aspect-video" :alt="member.name" :src="`${domain}${member.avatar.url}`" />
+      <img
+        class="w-full aspect-video"
+        :alt="member.name"
+        :src="`${config.cmsBase}${member.avatar.url}`"
+      />
     </figure>
     <div class="px-2 pt-4 pb-8 lg:p-8">
       <!-- メンバー名 -->
@@ -87,7 +90,7 @@ const domain = "https://cms.luminess.games";
             class="mx-2 w-7 h-7 lg:w-10 inline"
             v-for="useClass in member.classes"
             :key="useClass.id"
-            :src="`${domain}${useClass.icon.url}`"
+            :src="`${config.cmsBase}${useClass.icon.url}`"
             :alt="useClass.name"
           />
         </div>
@@ -100,7 +103,7 @@ const domain = "https://cms.luminess.games";
             class="mx-2 w-7 h-7 lg:w-10 inline"
             v-for="usePlatform in member.platforms"
             :key="usePlatform.id"
-            :src="`${domain}${usePlatform.icon.url}`"
+            :src="`${config.cmsBase}${usePlatform.icon.url}`"
             alt=""
           />
         </div>

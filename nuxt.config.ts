@@ -1,6 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "nuxt-icon", "@nuxt/image-edge"],
+  runtimeConfig: {
+    public: {
+      cmsBase: process.env.CMS_BASE_URL,
+      apiBase: `${process.env.CMS_BASE_URL}/api`
+    },
+  },
   app: {
     head: {
       title: "Luminessチームサイト",

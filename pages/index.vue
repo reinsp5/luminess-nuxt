@@ -3,8 +3,7 @@ import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 import qs from "qs";
 
-const baseUrl = "https://cms.luminess.games";
-
+const config = useRuntimeConfig();
 const query = qs.stringify(
   {
     populate: "image",
@@ -20,9 +19,14 @@ const { data: images } = await useFetch(
 
 <template>
   <main class="container mx-auto mb-10 px-4">
-    <Carousel :autoplay="5000" :wrap-around="true" :transition="500" :pause-autoplay-on-hover="true">
+    <Carousel
+      :autoplay="5000"
+      :wrap-around="true"
+      :transition="500"
+      :pause-autoplay-on-hover="true"
+    >
       <Slide v-for="image in images.data" :key="image.id">
-        <img :src="baseUrl + image.image.url" alt="" />
+        <img class="w-full h-auto aspect-video" :src="config.cmsBase + image.image.url" :alt="image.image.name" />
       </Slide>
     </Carousel>
     <div class="my-5 flex flex-col w-full lg:flex-row">
