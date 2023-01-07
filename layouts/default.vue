@@ -23,6 +23,9 @@
           <a href="https://twitter.com/reinsp5" target="_blank">
             <Icon name="mdi:twitter" size="40" />
           </a>
+          <a href="https://github.com/reinsp5">
+            <Icon name="mdi:github" size="40" />
+          </a>
         </div>
       </div>
     </footer>
