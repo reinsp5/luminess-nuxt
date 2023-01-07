@@ -32,7 +32,6 @@ jobs:
         env:
           CMS_BASE_URL: ${{ secrets.CMS_BASE_URL }}
         run: |
-          npm run build
           npm run generate
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
