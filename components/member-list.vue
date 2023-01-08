@@ -68,6 +68,7 @@ const { data: members } = await useFetch(
                   ${config.cmsBase + member.avatar.url} 2000w,`"
         width="750"
         height="420"
+        loading="lazy"
       />
     </figure>
     <div class="px-2 pt-4 pb-8 lg:p-8">

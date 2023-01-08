@@ -74,6 +74,9 @@ useHead({
                     ${config.cmsBase + image.image.formats?.medium.url} 640w, 
                     ${config.cmsBase + image.image.formats?.large.url} 1280w, 
                     ${config.cmsBase + image.image.url} 2000w,`"
+          width="1248"
+          height="702"
+          loading="lazy"
         />
       </Slide>
     </Carousel>

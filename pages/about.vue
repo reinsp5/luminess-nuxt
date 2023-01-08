@@ -111,6 +111,9 @@ useHead({
             class="mx-auto w-96 h-auto"
             alt="レインアイコン"
             src="@/assets/IMG_1184.webp"
+            width="512"
+            height="512"
+            loading="lazy"
           />
         </figure>
         <div class="mx-8 my-8">
