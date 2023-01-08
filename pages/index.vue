@@ -70,10 +70,9 @@ useHead({
         <img
           class="w-full h-auto aspect-video"
           :alt="image.image.name"
-          :srcset="`${config.cmsBase + image.image.formats?.small.url} 320w, 
-                    ${config.cmsBase + image.image.formats?.medium.url} 640w, 
-                    ${config.cmsBase + image.image.formats?.large.url} 1280w, 
-                    ${config.cmsBase + image.image.url} 2000w,`"
+          :srcset="`${config.cmsBase + image.image.formats?.medium.url} 320w, 
+                    ${config.cmsBase + image.image.formats?.large.url} 640w, 
+                    ${config.cmsBase + image.image.url} 1280w`"
           width="1248"
           height="702"
           loading="lazy"

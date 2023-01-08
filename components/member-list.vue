@@ -64,8 +64,7 @@ const { data: members } = await useFetch(
         :alt="member.name"
         :srcset="`${config.cmsBase + member.avatar.formats?.small.url} 320w, 
                   ${config.cmsBase + member.avatar.formats?.medium.url} 640w, 
-                  ${config.cmsBase + member.avatar.formats?.large.url} 1280w, 
-                  ${config.cmsBase + member.avatar.url} 2000w,`"
+                  ${config.cmsBase + member.avatar.formats?.large.url} 1280w`"
         width="750"
         height="420"
         loading="lazy"
