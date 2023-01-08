@@ -108,7 +108,7 @@ useHead({
       >
         <figure class="p-8 w-full">
           <img
-            class="mx-auto w-96 h-96"
+            class="mx-auto w-96 h-auto"
             alt="レインアイコン"
             src="@/assets/IMG_1184.webp"
           />
