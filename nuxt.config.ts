@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/tailwindcss", "nuxt-icon", "@nuxt/image-edge"],
+  modules: ["@nuxtjs/tailwindcss", "nuxt-icon"],
   runtimeConfig: {
     public: {
       cmsBase: process.env.CMS_BASE_URL,
@@ -12,7 +12,7 @@ export default defineNuxtConfig({
       title: "Luminessチームサイト",
       meta: [
         { charset: "utf-8" },
-        
+
         {
           property: "og:image",
           content: "/site_preview.webp",

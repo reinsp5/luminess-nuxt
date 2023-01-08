@@ -13,7 +13,7 @@ const query = qs.stringify(
   }
 );
 const { data: images } = await useFetch(
-  `https://cms.luminess.games/api/slideshows?${query}&sort[0]=id`
+  `${config.apiBase}/slideshows?${query}&sort[0]=id`
 );
 
 // metaタグ
