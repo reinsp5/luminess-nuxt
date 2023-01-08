@@ -18,7 +18,7 @@ const switchDrawerOpen = () => {
     </div>
     <div class="flex-1">
       <NuxtLink class="ml-2 text-xl font-bold" to="/" aria-label="トップページ">
-        <img class="h-10 lg:h-16 max-h-16 w-auto" src="@/assets/luminess_logo.svg" alt="Luminessロゴ" />
+        <img class="h-10 lg:h-16 max-h-16 w-auto" width="256" height="64" src="@/assets/luminess_logo.svg" alt="Luminessロゴ" />
       </NuxtLink>
     </div>
     <div class="flex-none hidden lg:block">

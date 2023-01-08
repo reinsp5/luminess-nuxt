@@ -12,6 +12,8 @@
       <div>
         <img
           class="w-96 max-w-full h-auto"
+          width="384"
+          height="96"
           src="@/assets/luminess_logo_white.svg"
           alt="luminess logo"
         />
