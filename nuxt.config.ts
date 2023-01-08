@@ -15,7 +15,7 @@ export default defineNuxtConfig({
         
         {
           property: "og:image",
-          content: "/twitter_preview.webp",
+          content: "/site_preview.webp",
         },
         {
           name: "twitter:card",
@@ -27,7 +27,7 @@ export default defineNuxtConfig({
         },
         {
           name: "twitter:image",
-          content: "/twitter_preview.webp",
+          content: "/site_preview.webp",
         },
       ],
       link: [

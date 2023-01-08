@@ -91,7 +91,7 @@ const { data: members } = await useFetch(
             >使用クラス</span
           >
           <img
-            class="mx-2 w-7 h-7 lg:w-10 inline"
+            class="mx-2 w-7 h-7 lg:w-10 lg:h-10 inline"
             v-for="useClass in member.classes"
             :key="useClass.id"
             :src="`${config.cmsBase}${useClass.icon.url}`"
@@ -104,7 +104,7 @@ const { data: members } = await useFetch(
             >プレイ環境</span
           >
           <img
-            class="mx-2 w-7 h-7 lg:w-10 inline"
+            class="mx-2 w-7 h-7 lg:w-10 lg:h-10 inline"
             v-for="usePlatform in member.platforms"
             :key="usePlatform.id"
             :src="`${config.cmsBase}${usePlatform.icon.url}`"

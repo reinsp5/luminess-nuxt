@@ -4,8 +4,7 @@ useHead({
   meta: [
     {
       name: "description",
-      content:
-        "チーム「Luminess」および当Webサイトに関する情報です。",
+      content: "チーム「Luminess」および当Webサイトに関する情報です。",
     },
     {
       property: "og:url",
@@ -17,25 +16,23 @@ useHead({
     },
     {
       property: "og:title",
-      content: "Luminessについて",
+      content: "チームLuminessおよび当サイトについて",
     },
     {
       property: "og:description",
-      content:
-        "チーム「Luminess」および当Webサイトに関する情報です。",
+      content: "チーム「Luminess」および当Webサイトに関する情報です。",
     },
     {
       property: "og:site_name",
-      content: "Luminessについて",
+      content: "チームLuminessおよび当サイトについて",
     },
     {
       name: "twitter:title",
-      content: "Luminessについて",
+      content: "チームLuminessおよび当サイトについて",
     },
     {
       name: "twitter:description",
-      content:
-        "チーム「Luminess」および当Webサイトに関する情報です。",
+      content: "チーム「Luminess」および当Webサイトに関する情報です。",
     },
   ],
 });
@@ -43,8 +40,68 @@ useHead({
 
 <template>
   <main class="container mx-auto my-10 px-4">
-    <h1 class="text-4xl font-bold">このサイトについて</h1>
+    <h1 class="text-xl lg:text-4xl font-bold">チームLuminessおよび当サイトについて</h1>
     <article class="my-8 text-sm lg:text-md xl:text-lg">
+      <!-- Luminess -->
+      <div
+        class="mb-20 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden border border-solid"
+      >
+        <figure
+          class="grid grid-cols-1 place-items-center bg-slate-900 w-full h-full p-10"
+        >
+          <img
+            class="mx-auto w-96 h-full p-10"
+            alt="Luminessアイコン"
+            src="/team_mark_white.svg"
+          />
+        </figure>
+        <div class="mx-8 my-8">
+          <h1 class="w-max text-3xl lg:text-4xl font-bold">
+            Luminess（ルミネス）
+          </h1>
+          <p class="my-4">
+            Luminessは、株式会社セガが運営するオンラインゲーム
+            <a
+              class="font-bold hover:underline mx-1"
+              href="https://pso2.jp/players"
+              target="_blank"
+              aria-label="PSO2のWebサイトへのリンク"
+            >
+              PHANTASY STAR ONLINE 2 NEW GENESIS
+            </a>
+            内のShip5（ラグズ）で活動しているチームです。
+          </p>
+          <p class="my-4">
+            これといったノルマは無く、チームツリーの使用も自由です。<br />
+            チームポイントは、各々がPSO2を遊ぶ中で片手間で収集してくれたら嬉しい程度で、特に積極的に稼いでほしいという事はありません。
+          </p>
+          <p class="my-4">というより、チームマスター自身が稼いでません←</p>
+          <p class="my-4">
+            良く言えば　<span class="font-bold text-2xl">超自由</span><br />
+            悪く言えば　<span class="font-bold text-2xl">放任主義</span><br />
+          </p>
+          <p class="my-4">そんなチームです。</p>
+          <p class="my-8">
+            ただし、最低限
+            <span class="text-red-600 font-bold text-2xl underline mx-2">
+              「他のプレイヤーに迷惑はかけてはならない」
+            </span>
+            という点だけは守るように周知しています。
+          </p>
+          <p class="my-4">
+            PSO2NGSの公式サイトにて公開されている
+            <a
+              class="font-bold hover:underline mx-1"
+              href="https://pso2.jp/players/support/rules/manners/playmanners/"
+              target="_blank"
+              aria-label="アークス「プレイマナー」講座"
+              >
+              アークス「プレイマナー」講座
+              </a>
+              の「プレイマナー講座」の内容を遵守することを推奨しています。
+          </p>
+        </div>
+      </div>
       <!-- レイン -->
       <div
         class="my-20 grid lg:grid-cols-2 place-items-center shadow-md rounded-xl overflow-hidden border border-solid"
@@ -65,9 +122,7 @@ useHead({
             普段はレガシーな分野のシステムエンジニアをする傍ら、プライベートでモダンな技術に触れて遊んでいるよ！<br />
           </p>
           <p class="my-4">
-            <span class="text-sm">
-              レガシー分野は正直つまらん… ε-(‐ω‐；)
-            </span>
+            <span class="text-sm"> レガシー分野は正直つまらん… ε-(‐ω‐；) </span>
           </p>
           <p class="my-4">
             新しいものが大好きで、気になったらとりあえず試して見る精神。<br />
@@ -78,13 +133,13 @@ useHead({
             そして、今回はJamstackの練習を兼ねてNuxtを使って作り直しました・ω・
           </p>
           <p class="my-8">
-            ちなみに、左のアイコンは当チームのマネージャーで、PSO2における腹心の相棒
+            ちなみに、左のアイコンは当チームのマネージャーで、僕の相棒
             <a
               class="font-bold hover:underline"
               href="https://twitter.com/ramyusu_aurasu"
               >クラレント</a
             >
-            さん作です。
+            さんの作品です！
           </p>
         </div>
       </div>
