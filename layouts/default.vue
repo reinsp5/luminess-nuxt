@@ -8,7 +8,7 @@
         <slot />
       </div>
     </div>
-    <footer class="sticky footer p-10 bg-slate-900 text-neutral-content">
+    <footer class="sticky footer p-6 bg-slate-900 text-neutral-content">
       <div>
         <img
           class="w-96 max-w-full"

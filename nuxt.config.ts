@@ -12,10 +12,10 @@ export default defineNuxtConfig({
       title: "Luminessチームサイト",
       meta: [
         { charset: "utf-8" },
+        
         {
-          name: "description",
-          content:
-            "PSO2およびPSO2NGSのShip5で活動中のチーム「Luminess」のWebサイト",
+          property: "og:image",
+          content: "/twitter_preview.webp",
         },
         {
           name: "twitter:card",
@@ -26,18 +26,8 @@ export default defineNuxtConfig({
           content: "@reinsp5",
         },
         {
-          name: "twitter:title",
-          content: "チームLuminess Webサイト",
-        },
-        {
-          name: "twitter:description",
-          content:
-            "PSO2およびPSO2NGSのShip5で活動中のチーム「Luminess」のWebサイト",
-        },
-        {
           name: "twitter:image",
-          content:
-            "/twitter_preview.webp",
+          content: "/twitter_preview.webp",
         },
       ],
       link: [

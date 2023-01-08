@@ -15,6 +15,47 @@ const query = qs.stringify(
 const { data: images } = await useFetch(
   `https://cms.luminess.games/api/slideshows?${query}&sort[0]=id`
 );
+
+// metaタグ
+useHead({
+  meta: [
+    {
+      name: "description",
+      content:
+        "PSO2およびPSO2NGSのShip5で活動中のチーム「Luminess」のWebサイト",
+    },
+    {
+      property: "og:url",
+      content: "https://luminess.games/",
+    },
+    {
+      property: "og:type",
+      content: "website",
+    },
+    {
+      property: "og:title",
+      content: "チームLuminess Webサイト",
+    },
+    {
+      property: "og:description",
+      content:
+        "PSO2およびPSO2NGSのShip5で活動中のチーム「Luminess」のWebサイト",
+    },
+    {
+      property: "og:site_name",
+      content: "チームLuminess Webサイト",
+    },
+    {
+      name: "twitter:title",
+      content: "チームLuminess Webサイト",
+    },
+    {
+      name: "twitter:description",
+      content:
+        "PSO2およびPSO2NGSのShip5で活動中のチーム「Luminess」のWebサイト",
+    },
+  ],
+});
 </script>
 
 <template>
@@ -26,7 +67,11 @@ const { data: images } = await useFetch(
       :pause-autoplay-on-hover="true"
     >
       <Slide v-for="image in images.data" :key="image.id">
-        <img class="w-full h-auto aspect-video" :src="config.cmsBase + image.image.url" :alt="image.image.name" />
+        <img
+          class="w-full h-auto aspect-video"
+          :src="config.cmsBase + image.image.url"
+          :alt="image.image.name"
+        />
       </Slide>
     </Carousel>
     <div class="my-5 flex flex-col w-full lg:flex-row">

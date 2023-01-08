@@ -1,4 +1,45 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+// metaタグ
+useHead({
+  meta: [
+    {
+      name: "description",
+      content:
+        "チーム「Luminess」および当Webサイトに関する情報です。",
+    },
+    {
+      property: "og:url",
+      content: "https://luminess.games/about",
+    },
+    {
+      property: "og:type",
+      content: "article",
+    },
+    {
+      property: "og:title",
+      content: "Luminessについて",
+    },
+    {
+      property: "og:description",
+      content:
+        "チーム「Luminess」および当Webサイトに関する情報です。",
+    },
+    {
+      property: "og:site_name",
+      content: "Luminessについて",
+    },
+    {
+      name: "twitter:title",
+      content: "Luminessについて",
+    },
+    {
+      name: "twitter:description",
+      content:
+        "チーム「Luminess」および当Webサイトに関する情報です。",
+    },
+  ],
+});
+</script>
 
 <template>
   <main class="container mx-auto my-10 px-4">
