@@ -1,6 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "nuxt-icon"],
+  routeRules: {
+    "/_nuxt/**": {
+      headers: {
+        "Cache-Control": "maxage=31536000",
+      },
+    },
+  },
   runtimeConfig: {
     public: {
       cmsBase: process.env.CMS_BASE_URL,
