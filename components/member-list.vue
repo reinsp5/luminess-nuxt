@@ -60,9 +60,13 @@ const { data: members } = await useFetch(
   >
     <figure class="w-full">
       <img
-        class="w-full aspect-video"
+        class="w-full h-auto aspect-video"
         :alt="member.name"
-        :src="`${config.cmsBase}${member.avatar.url}`"
+        :srcset="`${config.cmsBase + member.avatar.formats?.small.url} 320w, 
+                  ${config.cmsBase + member.avatar.formats?.medium.url} 640w, 
+                  ${config.cmsBase + member.avatar.formats?.large.url} 1280w, 
+                  ${config.cmsBase + member.avatar.url} 2000w,`"
+        loading="lazy"
       />
     </figure>
     <div class="px-2 pt-4 pb-8 lg:p-8">

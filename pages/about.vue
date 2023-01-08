@@ -51,8 +51,8 @@ useHead({
       >
         <figure class="p-8 w-full">
           <img
-            class="mx-auto w-96"
-            loading="lazy"
+            class="mx-auto w-96 h-full"
+            alt="レインアイコン"
             src="@/assets/IMG_1184.webp"
           />
         </figure>
@@ -65,7 +65,7 @@ useHead({
             普段はレガシーな分野のシステムエンジニアをする傍ら、プライベートでモダンな技術に触れて遊んでいるよ！<br />
           </p>
           <p class="my-4">
-            <span class="text-sm text-gray-400">
+            <span class="text-sm">
               レガシー分野は正直つまらん… ε-(‐ω‐；)
             </span>
           </p>
@@ -96,6 +96,7 @@ useHead({
         <figure class="p-8 w-full">
           <img
             class="w-full h-full aspect-video"
+            alt="Jamstack"
             src="@/assets/jamstack-logo.svg"
           />
         </figure>
@@ -137,6 +138,7 @@ useHead({
         <figure class="p-8 w-full">
           <img
             class="w-full h-full aspect-video"
+            alt="Nuxt"
             src="@/assets/nuxt-logo.svg"
           />
         </figure>
@@ -168,6 +170,7 @@ useHead({
         <figure class="p-8 w-full">
           <img
             class="w-full h-full aspect-video"
+            alt="Strapi"
             src="@/assets/strapi-logo.svg"
           />
         </figure>
@@ -201,6 +204,7 @@ useHead({
         <figure class="p-8 w-full">
           <img
             class="w-full h-full aspect-video"
+            alt="Tailwindcss"
             src="@/assets/tailwindcss-logo.svg"
           />
         </figure>
@@ -237,6 +241,7 @@ useHead({
         <figure class="p-8 w-full">
           <img
             class="w-full h-full aspect-video"
+            alt="daisyUI"
             src="@/assets/daisyui-logo.svg"
           />
         </figure>
@@ -275,6 +280,7 @@ useHead({
         <figure class="p-8 w-full">
           <img
             class="w-full h-full aspect-video"
+            alt="Firebase"
             src="@/assets/firebase-logo.svg"
           />
         </figure>
@@ -306,7 +312,7 @@ useHead({
         class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden border border-solid"
       >
         <figure class="p-8 w-full grid grid-cols-1 items-center">
-          <img class="w-full" src="@/assets/docker-logo.webp" />
+          <img class="w-full" alt="Docker" src="@/assets/docker-logo.webp" />
         </figure>
         <div class="mx-8 my-8">
           <h1 class="w-max text-3xl lg:text-4xl font-bold">
@@ -335,7 +341,7 @@ useHead({
         class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden border border-solid"
       >
         <figure class="p-8 w-full grid grid-cols-1 items-center">
-          <img class="w-full" src="@/assets/github-logo.svg" />
+          <img class="w-full" alt="Github" src="@/assets/github-logo.svg" />
         </figure>
         <div class="mx-8 my-8">
           <h1 class="w-max text-3xl lg:text-4xl font-bold">
