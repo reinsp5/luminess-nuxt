@@ -1,6 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/tailwindcss", "nuxt-icon"],
+  modules: ["@nuxtjs/tailwindcss", "nuxt-icon", "@nuxtjs/google-fonts"],
+  googleFonts: {
+    display: "swap",
+    families: {
+      "BIZ+UDPGothic": true,
+      Lato: [400],
+      Raleway: {
+        wght: [400],
+        ital: [400],
+      },
+    },
+  },
   routeRules: {
     "/_nuxt/**": {
       headers: {
@@ -38,6 +49,20 @@ export default defineNuxtConfig({
         },
       ],
       link: [
+        // {
+        //   rel: "preconnect",
+        //   href: "https://fonts.googleapis.com",
+        // },
+        // {
+        //   rel: "preconnect",
+        //   href: "https://fonts.gstatic.com",
+        //   crossorigin: "anonymous",
+        // },
+        // {
+        //   rel: "stylesheet",
+        //   href: "https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&display=swap",
+        //   media: "print",
+        // },
         {
           rel: "apple-touch-icon",
           type: "image/webp",

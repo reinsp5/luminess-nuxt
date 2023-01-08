@@ -7,8 +7,6 @@
 </template>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&display=swap");
-
 html,
 body,
 #__nuxt,
