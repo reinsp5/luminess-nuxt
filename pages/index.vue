@@ -75,8 +75,9 @@ useHead({
         <NuxtImg
           :src="image.photo.src"
           provider="imagekit"
-          sizes="sm:640px md:760px lg:768px xl:1920"
+          sizes="sm:640px md:760px lg:768px xl:1550"
           fit="pad_extract"
+          :alt="image.photo.fileName"
         />
       </Slide>
     </Carousel>

@@ -67,8 +67,9 @@ const { data: members } = await useFetch(
       <NuxtImg
         :src="member.avatar.src"
         provider="imagekit"
-        sizes="sm:640px md:760px lg:768px xl:1280"
+        sizes="sm:640px md:760px lg:768px xl:800"
         fit="pad_extract"
+        :alt="member.name"
       />
     </figure>
     <div class="px-2 pt-4 pb-8 lg:p-8">
