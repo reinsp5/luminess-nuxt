@@ -25,6 +25,7 @@ jobs:
       - name: Generate
         env:
           CMS_BASE_URL: ${{ secrets.CMS_BASE_URL }}
+          TOKEN: ${{ secrets.TOKEN }}
         run: |
           npm run generate
 

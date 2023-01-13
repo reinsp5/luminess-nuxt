@@ -1,6 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/tailwindcss", "nuxt-icon", "@nuxtjs/google-fonts"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "nuxt-icon",
+    "@nuxtjs/google-fonts",
+    "@nuxt/image-edge",
+  ],
+  image: {
+    imagekit: {
+      baseURL: "",
+    },
+  },
   googleFonts: {
     display: "swap",
     families: {
@@ -22,11 +32,11 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       cmsBase: process.env.CMS_BASE_URL,
-      apiBase: `${process.env.CMS_BASE_URL}/api`,
+      token: process.env.TOKEN,
     },
   },
   app: {
-    pageTransition: { name: 'page', mode: 'out-in' },
+    pageTransition: { name: "page", mode: "out-in" },
     head: {
       title: "Luminessチームサイト",
       meta: [
@@ -50,20 +60,6 @@ export default defineNuxtConfig({
         },
       ],
       link: [
-        // {
-        //   rel: "preconnect",
-        //   href: "https://fonts.googleapis.com",
-        // },
-        // {
-        //   rel: "preconnect",
-        //   href: "https://fonts.gstatic.com",
-        //   crossorigin: "anonymous",
-        // },
-        // {
-        //   rel: "stylesheet",
-        //   href: "https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&display=swap",
-        //   media: "print",
-        // },
         {
           rel: "apple-touch-icon",
           type: "image/webp",

@@ -46,28 +46,29 @@ const posClass = (value: String) => {
       return "bg-blue-500";
   }
 };
+
 const { data: members } = await useFetch(
-  `${config.apiBase}/members?${query}&sort[0]=id`
+  `${config.cmsBase}/members/member?order=_id&depth=2`,
+  {
+    headers: {
+      Authorization: `${config.token}`,
+    },
+  }
 );
-// const avatar = computed((value) => domain + value.data?.avatar.url);
 </script>
 
 <template>
   <div
-    v-for="member in members?.data"
-    :key="member.id"
+    v-for="member in members?.items"
+    :key="member._id"
     class="my-12 grid lg:grid-cols-2 shadow-md rounded-xl overflow-hidden border border-solid"
   >
     <figure class="w-full">
-      <img
-        class="w-full h-auto aspect-video"
-        :alt="member.name"
-        :srcset="`${config.cmsBase + member.avatar.formats?.small.url} 320w, 
-                  ${config.cmsBase + member.avatar.formats?.medium.url} 640w, 
-                  ${config.cmsBase + member.avatar.formats?.large.url} 1280w`"
-        width="750"
-        height="420"
-        loading="lazy"
+      <NuxtImg
+        :src="member.avatar.src"
+        provider="imagekit"
+        sizes="sm:640px md:760px lg:768px xl:1280"
+        fit="pad_extract"
       />
     </figure>
     <div class="px-2 pt-4 pb-8 lg:p-8">
@@ -78,7 +79,7 @@ const { data: members } = await useFetch(
         </h1>
         <div
           class="ml-4 py-1 px-4 text-md lg:text-xl text-white rounded-3xl w-max"
-          :class="posClass(member.position.short)"
+          :class="posClass(member.position.slug)"
         >
           {{ member.position.name }}
         </div>
@@ -91,11 +92,14 @@ const { data: members } = await useFetch(
           <span class="inline-block w-30 text-md lg:text-lg mr-2"
             >使用クラス</span
           >
-          <img
-            class="mx-2 w-7 h-7 lg:w-10 lg:h-10 inline"
-            v-for="useClass in member.classes"
+          <NuxtImg
+            v-for="useClass in member.useClass"
             :key="useClass.id"
-            :src="`${config.cmsBase}${useClass.icon.url}`"
+            :src="useClass.icon.src"
+            provider="imagekit"
+            sizes="sm:30px md:40px"
+            fit="pad_extract"
+            class="mx-2 w-7 h-7 lg:w-10 lg:h-10 inline"
             :alt="useClass.name"
           />
         </div>
@@ -104,12 +108,15 @@ const { data: members } = await useFetch(
           <span class="inline-block w-30 text-md lg:text-lg mr-2"
             >プレイ環境</span
           >
-          <img
-            class="mx-2 w-7 h-7 lg:w-10 lg:h-10 inline"
-            v-for="usePlatform in member.platforms"
+          <NuxtImg
+            v-for="usePlatform in member.platform"
             :key="usePlatform.id"
-            :src="`${config.cmsBase}${usePlatform.icon.url}`"
-            alt=""
+            :src="usePlatform.icon.src"
+            provider="imagekit"
+            sizes="sm:30px md:40px"
+            fit="pad_extract"
+            class="mx-2 w-7 h-7 lg:w-10 lg:h-10 inline"
+            :alt="usePlatform.name"
           />
         </div>
       </div>

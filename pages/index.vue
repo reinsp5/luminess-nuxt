@@ -13,7 +13,12 @@ const query = qs.stringify(
   }
 );
 const { data: images } = await useFetch(
-  `${config.apiBase}/slideshows?${query}&sort[0]=id`
+  `${config.cmsBase}/slideshow/photo?order=_id&depth=2`,
+  {
+    headers: {
+      Authorization: `${config.token}`,
+    },
+  }
 );
 
 // metaタグ
@@ -66,16 +71,12 @@ useHead({
       :transition="500"
       :pause-autoplay-on-hover="true"
     >
-      <Slide v-for="image in images.data" :key="image.id">
-        <img
-          class="w-full h-auto aspect-video"
-          :alt="image.image.name"
-          :srcset="`${config.cmsBase + image.image.formats?.medium.url} 320w, 
-                    ${config.cmsBase + image.image.formats?.large.url} 640w, 
-                    ${config.cmsBase + image.image.url} 1280w`"
-          width="1248"
-          height="702"
-          loading="lazy"
+      <Slide v-for="image in images?.items" :key="image._id">
+        <NuxtImg
+          :src="image.photo.src"
+          provider="imagekit"
+          sizes="sm:640px md:760px lg:768px xl:1920"
+          fit="pad_extract"
         />
       </Slide>
     </Carousel>
