@@ -71,7 +71,7 @@ useHead({
       :transition="500"
       :pause-autoplay-on-hover="true"
     >
-      <Slide v-for="image in images?.items" :key="image._id">
+      <Slide v-for="image in images?.items" :key="image.name">
         <NuxtImg
           :src="image.photo.src"
           provider="imagekit"
