@@ -41,10 +41,9 @@ export default defineNuxtConfig({
       title: "Luminessチームサイト",
       meta: [
         { charset: "utf-8" },
-
         {
           property: "og:image",
-          content: "/site_preview.webp",
+          content: "https://luminess.games/site_preview.webp",
         },
         {
           name: "twitter:card",
@@ -56,7 +55,7 @@ export default defineNuxtConfig({
         },
         {
           name: "twitter:image",
-          content: "/site_preview.webp",
+          content: "https://luminess.games/site_preview.webp",
         },
       ],
       link: [
