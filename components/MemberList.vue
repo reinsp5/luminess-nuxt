@@ -1,60 +1,5 @@
 <script lang="ts" setup>
-import qs from "qs";
 
-const config = useRuntimeConfig();
-const query = qs.stringify(
-  {
-    fields: ["name"],
-    populate: {
-      avatar: "*",
-      classes: {
-        fields: ["name", "short"],
-        populate: {
-          icon: {
-            fields: ["url"],
-          },
-        },
-      },
-      platforms: {
-        fields: ["name", "short"],
-        populate: {
-          icon: {
-            fields: ["url"],
-          },
-        },
-      },
-      position: {
-        fields: ["name", "short"],
-      },
-    },
-  },
-  {
-    encodeValuesOnly: true,
-  }
-);
-
-const posClass = (value: String) => {
-  if (!value) return;
-  switch (value) {
-    case "master":
-      return "bg-blue-800";
-    case "manager":
-      return "bg-teal-800";
-    case "common":
-      return "bg-rose-800";
-    case "visitor":
-      return "bg-blue-500";
-  }
-};
-
-const { data: members } = await useFetch(
-  `${config.cmsBase}/members/member?order=_id&depth=2`,
-  {
-    headers: {
-      Authorization: `${config.token}`,
-    },
-  }
-);
 </script>
 
 <template>
@@ -95,7 +40,7 @@ const { data: members } = await useFetch(
           >
           <NuxtImg
             v-for="useClass in member.useClass"
-            :key="useClass.id"
+            :key="useClass._id"
             :src="useClass.icon.src"
             provider="imagekit"
             sizes="sm:30px md:40px"
@@ -111,7 +56,7 @@ const { data: members } = await useFetch(
           >
           <NuxtImg
             v-for="usePlatform in member.platform"
-            :key="usePlatform.id"
+            :key="usePlatform._id"
             :src="usePlatform.icon.src"
             provider="imagekit"
             sizes="sm:30px md:40px"

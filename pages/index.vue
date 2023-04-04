@@ -1,17 +1,14 @@
 <script lang="ts" setup>
-import "vue3-carousel/dist/carousel.css";
-import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
-import qs from "qs";
 
 const config = useRuntimeConfig();
-const query = qs.stringify(
-  {
-    populate: "image",
-  },
-  {
-    encodeValuesOnly: true,
-  }
-);
+// const query = qs.stringify(
+//   {
+//     populate: "image",
+//   },
+//   {
+//     encodeValuesOnly: true,
+//   }
+// );
 const { data: images } = await useFetch(
   `${config.cmsBase}/slideshow/photo?order=_id&depth=2`,
   {
@@ -65,7 +62,7 @@ useHead({
 
 <template>
   <main class="container mx-auto mb-10 px-4">
-    <Carousel
+    <!-- <Carousel
       :autoplay="5000"
       :wrap-around="true"
       :transition="500"
@@ -80,7 +77,12 @@ useHead({
           :alt="image.photo.fileName"
         />
       </Slide>
-    </Carousel>
+    </Carousel> -->
+    <v-card class="bg-white" variant="outlined">
+      <v-card-title>
+        <h2 class="card-title">Luminessについて</h2>
+      </v-card-title>
+    </v-card>
     <div class="my-5 flex flex-col w-full lg:flex-row">
       <NuxtLink to="/about" class="lg:card-side bg-base-100 shadow-xl lg:w-1/2">
         <div class="card-body">

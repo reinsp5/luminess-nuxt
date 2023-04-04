@@ -1,9 +1,15 @@
 <script setup lang="ts"></script>
 
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <v-app>
+    <NavBar />
+    <v-main>
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+    </v-main>
+    <Footer />
+  </v-app>
 </template>
 
 <style>

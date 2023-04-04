@@ -8,17 +8,15 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/image-edge": "^1.0.0-27840416.dc1ed65",
-    "@nuxtjs/google-fonts": "^3.0.0-1",
-    "@nuxtjs/tailwindcss": "^6.2.0",
-    "@tailwindcss/typography": "^0.5.8",
-    "@types/qs": "^6.9.7",
-    "daisyui": "^2.46.0",
-    "nuxt": "3.0.0",
-    "nuxt-icon": "^0.1.8"
+    "@nuxt/image-edge": "^1.0.0-28008586.381b906",
+    "@nuxtjs/google-fonts": "^3.0.0",
+    "@nuxtjs/tailwindcss": "^6.6.5",
+    "nuxt": "3.3.3",
+    "nuxt-icon": "^0.3.3",
+    "vite-plugin-vuetify": "^1.0.2",
+    "vuetify": "^3.1.4"
   },
   "dependencies": {
-    "qs": "^6.11.0",
-    "vue3-carousel": "^0.2.9"
+    "newt-client-js": "^3.2.4"
   }
 }

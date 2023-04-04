@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Member } from "~/types/member";
+
 // metaタグ
 useHead({
   meta: [
@@ -36,13 +38,32 @@ useHead({
     },
   ],
 });
+
+// メンバー情報を取得
+const { data } = await useAsyncData("members", async () => {
+  const { $newtClient } = useNuxtApp();
+  return await $newtClient.getContents<Member>({
+    appUid: "members",
+    modelUid: "member",
+    query: {
+      order: ["_id"],
+      depth: 2,
+    },
+  });
+});
+
+const members = data.value;
 </script>
 
 <template>
-  <div class="container mx-auto my-10 px-4">
-    <h1 class="text-4xl font-bold">Team Members</h1>
-    <member-list />
-  </div>
+  <v-container>
+    <h1 class="my-8 text-4xl font-bold">Team Members</h1>
+    <v-row v-for="member in members?.items" :key="member._id">
+      <v-col>
+        <MemberCard :member="member" />
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <style scoped></style>

@@ -1,10 +1,29 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import vuetify from "vite-plugin-vuetify";
+
 export default defineNuxtConfig({
+  ssr: true,
+  experimental: {
+    inlineSSRStyles: false,
+  },
+  css: ["vuetify/styles"],
+  build: {
+    transpile: ["vuetify"],
+  },
+  vite: {
+    ssr: {
+      noExternal: ["vuetify"],
+    },
+  },
   modules: [
     "@nuxtjs/tailwindcss",
     "nuxt-icon",
     "@nuxtjs/google-fonts",
     "@nuxt/image-edge",
+    async (_, nuxt) => {
+      nuxt.hooks.hook("vite:extendConfig", (config: any) =>
+        config.plugins.push(vuetify({}))
+      );
+    },
   ],
   image: {
     imagekit: {
@@ -22,23 +41,20 @@ export default defineNuxtConfig({
       },
     },
   },
-  routeRules: {
-    "/_nuxt/**": {
-      headers: {
-        "Cache-Control": "maxage=31536000",
-      },
-    },
-  },
   runtimeConfig: {
-    public: {
-      cmsBase: process.env.CMS_BASE_URL,
-      token: process.env.TOKEN,
+    newt: {
+      spaceUid: process.env.NUXT_NEWT_SPACE_UID || "",
+      apiToken: process.env.NUXT_NEWT_API_TOKEN || "",
+      cdnApiToken: process.env.NUXT_NEWT_CDN_API_TOKEN || "",
     },
   },
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
       title: "Luminessチームサイト",
+      htmlAttrs: {
+        lang: "ja",
+      },
       meta: [
         { charset: "utf-8" },
         {
@@ -87,14 +103,6 @@ export default defineNuxtConfig({
           href: "/favicons/site.webmanifest",
         },
       ],
-      htmlAttrs: {
-        lang: "ja",
-        "data-theme": "corporate",
-        class: "h-full",
-      },
-      bodyAttrs: {
-        class: "h-full",
-      },
     },
   },
 });
