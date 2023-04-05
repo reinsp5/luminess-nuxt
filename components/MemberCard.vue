@@ -20,25 +20,17 @@ const posClass = (value: String) => {
 </script>
 
 <template>
-  <v-card>
-    <v-row>
+  <v-card variant="outlined">
+    <v-row no-gutters>
       <v-col cols="12" md="6">
         <v-img :src="props.member.avatar.src" />
       </v-col>
-      <v-col cols="12" md="6">
-        <div class="px-2 pt-4 pb-8 lg:p-8">
-          <!-- メンバー名 -->
-          <div class="flex">
-            <h1 class="w-max text-2xl lg:text-3xl xl:text-4xl font-bold">
-              {{ props.member.name }}
-            </h1>
-            <div
-              class="ml-4 py-1 px-4 text-md lg:text-xl text-white rounded-3xl w-max"
-              :class="posClass(props.member.position.slug)"
-            >
-              {{ props.member.position.name }}
-            </div>
-          </div>
+      <v-col cols="12" md="6" class="pa-4">
+        <!-- メンバー名 -->
+        <div class="flex">
+          <h1 class="w-max text-2xl lg:text-3xl xl:text-4xl font-bold">
+            {{ props.member.name }}
+          </h1>
         </div>
 
         <!-- ステータス情報 -->
@@ -74,6 +66,18 @@ const posClass = (value: String) => {
               class="mx-2 w-7 h-7 lg:w-10 lg:h-10 inline"
               :alt="usePlatform.name"
             />
+          </div>
+          <!-- ポジション -->
+          <div class="mt-4 flex items-center">
+            <span class="inline-block w-30 text-md lg:text-lg mr-2"
+              >ポジション</span
+            >
+            <div
+            class="ml-4 py-1 px-4 text-white rounded-3xl"
+            :class="posClass(props.member.position.slug)"
+          >
+            {{ props.member.position.name }}
+          </div>
           </div>
         </div>
       </v-col>

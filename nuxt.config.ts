@@ -19,12 +19,16 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "@nuxtjs/google-fonts",
     "@nuxt/image-edge",
+    "@nuxtjs/device",
     async (_, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config: any) =>
         config.plugins.push(vuetify({}))
       );
     },
   ],
+  device: {
+    refreshOnResize: true,
+  },
   image: {
     imagekit: {
       baseURL: "",

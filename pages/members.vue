@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { Member } from "~/types/member";
 
 // metaタグ
@@ -40,7 +40,7 @@ useHead({
 });
 
 // メンバー情報を取得
-const { data } = await useAsyncData("members", async () => {
+const { data: members } = await useAsyncData("members", async () => {
   const { $newtClient } = useNuxtApp();
   return await $newtClient.getContents<Member>({
     appUid: "members",
@@ -52,7 +52,6 @@ const { data } = await useAsyncData("members", async () => {
   });
 });
 
-const members = data.value;
 </script>
 
 <template>

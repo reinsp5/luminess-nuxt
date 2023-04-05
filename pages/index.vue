@@ -1,22 +1,6 @@
 <script lang="ts" setup>
-
-const config = useRuntimeConfig();
-// const query = qs.stringify(
-//   {
-//     populate: "image",
-//   },
-//   {
-//     encodeValuesOnly: true,
-//   }
-// );
-const { data: images } = await useFetch(
-  `${config.cmsBase}/slideshow/photo?order=_id&depth=2`,
-  {
-    headers: {
-      Authorization: `${config.token}`,
-    },
-  }
-);
+import { SlideshowImage } from "~/types/slideshow";
+import { mdiInformation, mdiAccountGroup } from "@mdi/js";
 
 // metaタグ
 useHead({
@@ -58,50 +42,82 @@ useHead({
     },
   ],
 });
+
+// スライドショーの画像情報を取得
+const { data: images } = await useAsyncData("carousel", async () => {
+  const { $newtClient } = useNuxtApp();
+  return await $newtClient.getContents<SlideshowImage>({
+    appUid: "slideshow",
+    modelUid: "photo",
+    query: {
+      order: ["_id"],
+      depth: 2,
+    },
+  });
+});
 </script>
 
 <template>
-  <main class="container mx-auto mb-10 px-4">
-    <!-- <Carousel
-      :autoplay="5000"
-      :wrap-around="true"
-      :transition="500"
-      :pause-autoplay-on-hover="true"
-    >
-      <Slide v-for="image in images?.items" :key="image.name">
-        <NuxtImg
-          :src="image.photo.src"
-          provider="imagekit"
-          sizes="sm:640px md:760px lg:768px xl:1550"
-          fit="pad_extract"
-          :alt="image.photo.fileName"
-        />
-      </Slide>
-    </Carousel> -->
-    <v-card class="bg-white" variant="outlined">
-      <v-card-title>
-        <h2 class="card-title">Luminessについて</h2>
-      </v-card-title>
-    </v-card>
-    <div class="my-5 flex flex-col w-full lg:flex-row">
-      <NuxtLink to="/about" class="lg:card-side bg-base-100 shadow-xl lg:w-1/2">
-        <div class="card-body">
-          <h2 class="card-title">Luminessについて</h2>
-          <p>チームLuminessについての詳細はこちら</p>
-        </div>
-      </NuxtLink>
-      <div class="divider lg:divider-horizontal"></div>
-      <NuxtLink
-        to="/members"
-        class="lg:card-side bg-base-100 shadow-xl lg:w-1/2"
-      >
-        <div class="card-body">
-          <h2 class="card-title">メンバー一覧</h2>
-          <p>Luminessの所属メンバーはこちら</p>
-        </div>
-      </NuxtLink>
-    </div>
-  </main>
+  <v-container>
+    <v-row>
+      <v-col>
+        <v-responsive :aspect-ratio="16 / 9">
+          <v-carousel
+            height="100%"
+            :hide-delimiters="true"
+            :show-arrows="false"
+            :interval="10000"
+            :touch="true"
+          >
+            <v-carousel-item
+              v-for="image in images?.items"
+              :key="image._id"
+              :src="image.photo.src"
+              cover
+            />
+          </v-carousel>
+        </v-responsive>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12" md="6">
+        <NuxtLink to="/about">
+          <v-hover v-slot:default="{ isHovering, props }">
+            <v-card
+              v-bind="props"
+              :elevation="0"
+              :class="{ 'bg-primary-darken-8': isHovering }"
+              variant="outlined"
+            >
+              <v-card-title class="text-center">
+                <v-icon :size="50">{{ mdiInformation }}</v-icon>
+                <h2 class="text-h5">Luminessについて</h2>
+              </v-card-title>
+              <v-card-text> チームLuminessについての詳細はこちら </v-card-text>
+            </v-card>
+          </v-hover>
+        </NuxtLink>
+      </v-col>
+      <v-col cols="12" md="6">
+        <NuxtLink to="/members">
+          <v-hover v-slot:default="{ isHovering, props }">
+            <v-card
+              v-bind="props"
+              :elevation="0"
+              :class="{ 'bg-primary-darken-8': isHovering }"
+              variant="outlined"
+            >
+              <v-card-title class="text-center">
+                <v-icon :size="50">{{ mdiAccountGroup }}</v-icon>
+                <h2 class="text-h5">メンバー一覧</h2>
+              </v-card-title>
+              <v-card-text> Luminessの所属メンバーはこちら </v-card-text>
+            </v-card>
+          </v-hover>
+        </NuxtLink>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <style scoped></style>

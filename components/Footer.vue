@@ -1,18 +1,19 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { mdiTwitter, mdiGithub } from "@mdi/js";
+</script>
 
 <template>
-  <v-footer class="bg-slate-900 d-flex flex-column">
-    <div>
-      <img
-        class="w-96 max-w-full h-auto"
-        width="384"
-        height="96"
-        src="@/assets/luminess_logo_white.svg"
-        alt="luminess logo"
+  <v-footer class="px-10 py-8 bg-primary-darken-8 d-flex flex-column">
+    <div class="mr-auto">
+      <v-img
+        src="/images/luminess_logo_white_without_background.svg"
+        alt="luminess Logo"
+        class="no-padding-image lg:w-96"
+        contain
       />
-      <p class="ml-6">Copyright&copy; Luminess 2022</p>
+      <p class="mt-4">Copyright&copy; Luminess 2022</p>
     </div>
-    <div>
+    <div class="ml-auto">
       <span class="footer-title">Social</span>
       <div class="grid grid-flow-col gap-4">
         <a
@@ -20,17 +21,21 @@
           target="_blank"
           aria-label="レインのTwitterアカウント"
         >
-          <Icon name="mdi:twitter" size="40" />
+          <v-icon size="40">{{ mdiTwitter }}</v-icon>
         </a>
         <a
           href="https://github.com/reinsp5"
           aria-label="レインのGithubプロフィール"
         >
-          <Icon name="mdi:github" size="40" />
+          <v-icon size="40">{{ mdiGithub }}</v-icon>
         </a>
       </div>
     </div>
   </v-footer>
 </template>
 
-<style scoped></style>
+<style scoped>
+.no-padding-image .v-image__image {
+  padding: 0 !important;
+}
+</style>
