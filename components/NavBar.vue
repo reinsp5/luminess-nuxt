@@ -1,8 +1,6 @@
 <script lang="ts" setup>
 import { mdiHome, mdiInformation, mdiAccountGroup } from "@mdi/js";
 
-const { isMobile } = useDevice();
-
 const drawer = ref(false);
 
 const links = [
@@ -14,10 +12,7 @@ const links = [
 
 <template>
   <v-app-bar app color="background" :elevation="0">
-    <v-app-bar-nav-icon
-      @click="drawer = !drawer"
-      v-if="isMobile"
-    ></v-app-bar-nav-icon>
+    <v-app-bar-nav-icon class="md:hidden" @click="drawer = !drawer"></v-app-bar-nav-icon>
     <v-app-bar-title>
       <v-img
         max-width="200"
@@ -28,7 +23,7 @@ const links = [
     </v-app-bar-title>
 
     <!-- ナビゲーションタブ (デスクトップ) -->
-    <v-tabs class="ml-auto" v-if="!isMobile">
+    <v-tabs class="ml-auto hidden md:block">
       <v-tab v-for="link in links" :key="link.title" :to="link.to" nuxt>
         <v-icon :size="25">{{ link.icon }}</v-icon>
         {{ link.title }}
@@ -42,10 +37,15 @@ const links = [
     temporary
     v-model="drawer"
     :disable-resize-watcher="true"
-    v-if="isMobile"
   >
     <v-list nav>
-      <v-list-item v-for="link in links" :key="link.title" :prepend-icon="link.icon" :to="link.to" nuxt>
+      <v-list-item
+        v-for="link in links"
+        :key="link.title"
+        :prepend-icon="link.icon"
+        :to="link.to"
+        nuxt
+      >
         <v-list-item-title>
           {{ link.title }}
         </v-list-item-title>

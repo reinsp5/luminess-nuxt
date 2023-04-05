@@ -72,9 +72,16 @@ const { data: images } = await useAsyncData("carousel", async () => {
             <v-carousel-item
               v-for="image in images?.items"
               :key="image._id"
-              :src="image.photo.src"
               cover
-            />
+            >
+              <NuxtImg
+                :src="image.photo.src"
+                provider="imagekit"
+                sizes="sm:640px md:760px lg:768px xl:1550px"
+                fit="pad_extract"
+                :alt="image.photo.fileName"
+              />
+            </v-carousel-item>
           </v-carousel>
         </v-responsive>
       </v-col>
