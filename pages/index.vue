@@ -80,6 +80,8 @@ const { data: images } = await useAsyncData("carousel", async () => {
                 sizes="sm:640px md:760px lg:768px xl:1550px"
                 fit="pad_extract"
                 :alt="image.photo.fileName"
+                width="100%"
+                height="100%"
               />
             </v-carousel-item>
           </v-carousel>

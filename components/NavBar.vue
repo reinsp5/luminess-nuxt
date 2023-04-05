@@ -12,7 +12,7 @@ const links = [
 
 <template>
   <v-app-bar app color="background" :elevation="0">
-    <v-app-bar-nav-icon class="md:hidden" @click="drawer = !drawer"></v-app-bar-nav-icon>
+    <v-app-bar-nav-icon class="md:hidden" @click="drawer = !drawer" alt="toggle button" />
     <v-app-bar-title>
       <v-img
         max-width="200"
@@ -24,7 +24,7 @@ const links = [
 
     <!-- ナビゲーションタブ (デスクトップ) -->
     <v-tabs class="ml-auto hidden md:block">
-      <v-tab v-for="link in links" :key="link.title" :to="link.to" nuxt>
+      <v-tab v-for="link in links" :key="link.title" :to="link.to" :alt="link.title" nuxt>
         <v-icon :size="25">{{ link.icon }}</v-icon>
         {{ link.title }}
       </v-tab>
@@ -44,6 +44,7 @@ const links = [
         :key="link.title"
         :prepend-icon="link.icon"
         :to="link.to"
+        :alt="link.title"
         nuxt
       >
         <v-list-item-title>
