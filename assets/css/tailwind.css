@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply text-slate-800;
+  font-family: 'IBM Plex Sans JP', sans-serif;
+}
+
+html,
+body {
+  @apply w-full;
+}
+
+#__nuxt {
+  @apply w-full flex flex-col min-h-screen;
+}

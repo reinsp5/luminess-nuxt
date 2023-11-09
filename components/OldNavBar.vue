@@ -11,25 +11,25 @@ const links = [
 </script>
 
 <template>
-  <v-app-bar color="background" :elevation="0" app>
-    <v-app-bar-nav-icon class="md:hidden" @click="drawer = !drawer" alt="toggle button" />
-    <v-app-bar-title>
-      <v-img
+  <div color="background" :elevation="0" app>
+    <div class="md:hidden" @click="drawer = !drawer" alt="toggle button" />
+    <div>
+      <NuxtImg
         max-width="200"
         max-height="60"
         src="/images/luminess_logo.svg"
         contain
       />
-    </v-app-bar-title>
+    </div>
 
     <!-- ナビゲーションタブ (デスクトップ) -->
-    <v-tabs class="ml-auto hidden md:block">
-      <v-tab v-for="link in links" :key="link.title" :to="link.to" :alt="link.title" nuxt>
-        <v-icon :size="25">{{ link.icon }}</v-icon>
+    <div class="ml-auto hidden md:block">
+      <div v-for="link in links" :key="link.title" :to="link.to" :alt="link.title" nuxt>
+        <NuxtIcon :size="25">{{ link.icon }}</NuxtIcon>
         {{ link.title }}
-      </v-tab>
-    </v-tabs>
-  </v-app-bar>
+      </div>
+    </div>
+  </div>
 
   <!-- ナビゲーションドロワー (スマホ) -->
   <v-navigation-drawer
@@ -38,7 +38,7 @@ const links = [
     v-model="drawer"
     :disable-resize-watcher="true"
   >
-    <v-list nav>
+    <div nav>
       <v-list-item
         v-for="link in links"
         :key="link.title"

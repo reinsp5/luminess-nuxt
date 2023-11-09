@@ -20,12 +20,12 @@ const posClass = (value: String) => {
 </script>
 
 <template>
-  <v-card variant="outlined">
-    <v-row no-gutters>
-      <v-col cols="12" md="6">
-        <v-img :src="props.member.avatar.src" />
-      </v-col>
-      <v-col cols="12" md="6" class="pa-4">
+  <div variant="outlined">
+    <div no-gutters>
+      <div cols="12" md="6">
+        <NuxtImg :src="props.member.avatar.src" />
+      </div>
+      <div cols="12" md="6" class="pa-4">
         <!-- メンバー名 -->
         <div class="flex">
           <h1 class="w-max text-2xl lg:text-3xl xl:text-4xl font-bold">
@@ -80,9 +80,9 @@ const posClass = (value: String) => {
           </div>
           </div>
         </div>
-      </v-col>
-    </v-row>
-  </v-card>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped></style>

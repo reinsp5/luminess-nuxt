@@ -1,5 +1,9 @@
 <script lang="ts" setup></script>
 
 <template>
-  <slot />
+  <Header />
+  <main class="p-4 flex-grow">
+    <slot />
+  </main>
+  <Footer />
 </template>

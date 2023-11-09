@@ -1,42 +1,18 @@
 <script lang="ts" setup>
-import type { Member } from "~/types/member";
+import type { Member } from "@/types/member";
 
-// metaタグ
-useHead({
-  meta: [
-    {
-      name: "description",
-      content: "チーム「Luminess」のメンバー一覧です。",
-    },
-    {
-      property: "og:url",
-      content: "https://luminess.games/members",
-    },
-    {
-      property: "og:type",
-      content: "article",
-    },
-    {
-      property: "og:title",
-      content: "Luminessのメンバー一覧",
-    },
-    {
-      property: "og:description",
-      content: "チーム「Luminess」のメンバー一覧です。",
-    },
-    {
-      property: "og:site_name",
-      content: "Luminessのメンバー一覧",
-    },
-    {
-      name: "twitter:title",
-      content: "Luminessのメンバー一覧",
-    },
-    {
-      name: "twitter:description",
-      content: "チーム「Luminess」のメンバー一覧です。",
-    },
-  ],
+// SEOメタ情報を設定
+const pageTitle = "Luminessのメンバー一覧";
+const pageDescription = "チーム「Luminess」のメンバー一覧です。";
+useSeoMeta({
+  description: pageDescription,
+  ogType: "article",
+  ogUrl: "https://luminess.games/members",
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogSiteName: pageTitle,
+  twitterTitle: pageTitle,
+  twitterDescription: pageDescription,
 });
 
 // メンバー情報を取得
@@ -55,14 +31,9 @@ const { data: members } = await useAsyncData("members", async () => {
 </script>
 
 <template>
-  <v-container>
-    <h1 class="my-8 text-4xl font-bold">Team Members</h1>
-    <v-row v-for="member in members?.items" :key="member._id">
-      <v-col>
-        <MemberCard :member="member" />
-      </v-col>
-    </v-row>
-  </v-container>
+  <div class="container">
+    <h1 class="text-2xl">Member</h1>
+  </div>
 </template>
 
 <style scoped></style>

@@ -1,26 +1,16 @@
 export default defineNuxtConfig({
-  modules: ["@nuxt/image", "nuxt-icon", "@nuxtjs/google-fonts"],
+  devtools: { enabled: true },
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/google-fonts",
+    "@nuxt/image",
+    "nuxt-icon",
+  ],
   // Nitroの設定
   nitro: {
     preset: "cloudflare-pages",
     prerender: {
       crawlLinks: true,
-    },
-  },
-  // Vuetifyの設定
-  css: ["vuetify/lib/styles/main.sass"],
-  build: {
-    transpile: ["vuetify"],
-  },
-  vite: {
-    define: {
-      "process.env.DEBUG": false,
-    },
-    // for HMR
-    server: {
-      watch: {
-        usePolling: true,
-      },
     },
   },
   // NuxtImageの設定
