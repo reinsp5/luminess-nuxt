@@ -2,7 +2,7 @@
 
 <template>
   <Header />
-  <main class="p-4 flex-grow">
+  <main class="flex-grow">
     <slot />
   </main>
   <Footer />

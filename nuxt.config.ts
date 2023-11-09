@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
     "@nuxt/image",
-    "nuxt-icon",
+    "nuxt-swiper",
   ],
   // Nitroの設定
   nitro: {
@@ -25,6 +25,10 @@ export default defineNuxtConfig({
     families: {
       "IBM+Plex+Sans+JP": true,
     },
+  },
+  // Swiperの設定
+  swiper: {
+    prefix: "Swiper"
   },
   runtimeConfig: {
     newt: {
