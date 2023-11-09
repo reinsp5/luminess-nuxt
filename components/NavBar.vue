@@ -11,7 +11,7 @@ const links = [
 </script>
 
 <template>
-  <v-app-bar app color="background" :elevation="0">
+  <v-app-bar color="background" :elevation="0" app>
     <v-app-bar-nav-icon class="md:hidden" @click="drawer = !drawer" alt="toggle button" />
     <v-app-bar-title>
       <v-img

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Member } from "~/types/member";
+import type { Member } from "@/types/member";
 const props = defineProps<{
   member: Member;
 }>();

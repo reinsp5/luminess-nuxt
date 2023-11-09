@@ -1,4 +1,5 @@
-import { Client, createClient } from "newt-client-js";
+import { createClient } from "newt-client-js";
+import fetchAdapter from "@vespaiach/axios-fetch-adapter";
 
 export default defineNuxtPlugin(() => {
   const config = useRuntimeConfig();
@@ -6,6 +7,7 @@ export default defineNuxtPlugin(() => {
     spaceUid: config.newt.spaceUid,
     token: config.newt.cdnApiToken,
     apiType: "cdn",
+    adapter:fetchAdapter,
   });
   return {
     provide: {

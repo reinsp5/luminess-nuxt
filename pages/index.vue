@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { SlideshowImage } from "~/types/slideshow";
+import type { SlideshowImage } from "~/types/slideshow";
 import { mdiInformation, mdiAccountGroup } from "@mdi/js";
 
 // metaタグ

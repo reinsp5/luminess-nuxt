@@ -1,44 +1,39 @@
-import vuetify from "vite-plugin-vuetify";
-
 export default defineNuxtConfig({
-  ssr: true,
-  experimental: {
-    inlineSSRStyles: false,
+  modules: ["@nuxt/image", "nuxt-icon", "@nuxtjs/google-fonts"],
+  // Nitroの設定
+  nitro: {
+    preset: "cloudflare-pages",
+    prerender: {
+      crawlLinks: true,
+    },
   },
-  css: ["vuetify/styles"],
+  // Vuetifyの設定
+  css: ["vuetify/lib/styles/main.sass"],
   build: {
     transpile: ["vuetify"],
   },
   vite: {
-    ssr: {
-      noExternal: ["vuetify"],
+    define: {
+      "process.env.DEBUG": false,
+    },
+    // for HMR
+    server: {
+      watch: {
+        usePolling: true,
+      },
     },
   },
-  modules: [
-    "@nuxtjs/tailwindcss",
-    "nuxt-icon",
-    "@nuxtjs/google-fonts",
-    "@nuxt/image-edge",
-    async (_, nuxt) => {
-      nuxt.hooks.hook("vite:extendConfig", (config: any) =>
-        config.plugins.push(vuetify({}))
-      );
-    },
-  ],
+  // NuxtImageの設定
   image: {
     imagekit: {
       baseURL: "",
     },
   },
+  // GoogleFontsの設定
   googleFonts: {
     display: "swap",
     families: {
-      "BIZ+UDPGothic": true,
-      Lato: [400],
-      Raleway: {
-        wght: [400],
-        ital: [400],
-      },
+      "IBM+Plex+Sans+JP": true,
     },
   },
   runtimeConfig: {
