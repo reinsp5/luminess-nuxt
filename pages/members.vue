@@ -31,7 +31,7 @@ const { data: members } = await useAsyncData("members", async () => {
 </script>
 
 <template>
-  <div class="container">
+  <div class="container mx-auto p-4">
     <h1 class="text-2xl">Member</h1>
   </div>
 </template>

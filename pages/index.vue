@@ -1,12 +1,5 @@
 <script lang="ts" setup>
-import type { SlideshowImage } from "@/types/slideshow";
-import { mdiInformation, mdiAccountGroup } from "@mdi/js";
-import {
-  ArrowPathIcon,
-  CloudArrowUpIcon,
-  FingerPrintIcon,
-  LockClosedIcon,
-} from "@heroicons/vue/24/outline";
+import { CloudArrowUpIcon, LockClosedIcon } from "@heroicons/vue/24/outline";
 
 // SEOメタ情報を設定
 const pageTitle = "チームLuminess Webサイト";
@@ -37,23 +30,10 @@ const features = [
     icon: LockClosedIcon,
   },
 ];
-
-// スライドショーの画像情報を取得
-// const { data: images } = await useAsyncData("carousel", async () => {
-//   const { $newtClient } = useNuxtApp();
-//   return await $newtClient.getContents<SlideshowImage>({
-//     appUid: "slideshow",
-//     modelUid: "photo",
-//     query: {
-//       order: ["_id"],
-//       depth: 2,
-//     },
-//   });
-// });
 </script>
 
 <template>
-  <article class="2xl:my-8">
+  <article class="2xl:p-4">
     <section class="container mx-auto">
       <Hero />
     </section>

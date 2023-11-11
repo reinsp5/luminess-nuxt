@@ -5,7 +5,7 @@ const isDrawerOpen = useState("drawer-control");
 <template>
   <div class="relative">
     <button
-      class="p-1 rounded-md hover:bg-slate-300 active:bg-slate-400 transition-colors"
+      class="p-1 rounded-md hover:bg-slate-600 active:bg-slate-800 transition-colors"
       @click="isDrawerOpen = true"
     >
       <svg
@@ -34,11 +34,11 @@ const isDrawerOpen = useState("drawer-control");
     />
     <!-- Drawer -->
     <nav
-      class="fixed top-0 right-0 bg-slate-100 shadow-md h-screen w-96 flex px-4 py-8 duration-300"
+      class="fixed top-0 right-0 bg-[#0C111B] shadow-md h-screen w-96 flex px-4 py-8 duration-300"
       :class="[isDrawerOpen ? 'translate-x-0' : 'translate-x-full']"
     >
       <button
-        class="absolute top-4 left-4 p-1 rounded-md hover:bg-slate-300 active:bg-slate-400 transition-colors"
+        class="absolute top-4 left-4 p-1 rounded-md hover:bg-slate-600 active:bg-slate-800 transition-colors"
         @click="isDrawerOpen = false"
       >
         <svg

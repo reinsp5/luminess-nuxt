@@ -21,8 +21,8 @@ onMounted(() => {
       class="flex items-center py-4 px-4 rounded-md transition-colors text-xl"
       :class="
         isActive
-          ? ['bg-slate-400']
-          : ['hover:bg-slate-300', 'active:bg-slate-400']
+          ? ['bg-slate-800']
+          : ['hover:bg-slate-600 ', 'active:bg-slate-800']
       "
       :href="href"
     >

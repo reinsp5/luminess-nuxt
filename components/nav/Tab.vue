@@ -18,6 +18,6 @@ import { PageLinks } from "@/helpers/pagelink";
 
 <style scoped>
 .tab {
-  @apply px-6 flex flex-initial items-center hover:bg-slate-400 active:bg-slate-600 transition-colors;
+  @apply px-6 flex flex-initial items-center hover:bg-slate-600 active:bg-slate-800 transition-colors;
 }
 </style>
