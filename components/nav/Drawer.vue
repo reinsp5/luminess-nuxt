@@ -63,4 +63,12 @@ const isDrawerOpen = useState("drawer-control");
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+</style>
