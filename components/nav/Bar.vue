@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { HomeIcon, InformationCircleIcon, UserGroupIcon } from "@heroicons/vue/24/solid"
+import { PageLinks } from "@/helpers/pagelink";
 </script>
 
 <template>
@@ -15,17 +15,18 @@ import { HomeIcon, InformationCircleIcon, UserGroupIcon } from "@heroicons/vue/2
           />
         </NuxtLink>
       </div>
-      <div class="h-full md:flex justify-end hidden">
-        <NuxtLink class="tab" to="/"><HomeIcon class="mx-2 w-8 h-8" />HOME</NuxtLink>
-        <NuxtLink class="tab" to="/about"><InformationCircleIcon class="mx-2 w-8 h-8" />ABOUT</NuxtLink>
-        <NuxtLink class="tab" to="/members"><UserGroupIcon class="mx-2 w-8 h-8" />MEMBERS</NuxtLink>
-      </div>
+      <NavTab class="h-full hidden md:flex md:justify-end" />
+      <NavDrawer class="z-50 flex justify-end md:hidden">
+        <NavDrawerItem
+          v-for="link in PageLinks"
+          :key="link.path"
+          :title="link.title"
+          :href="link.path"
+          :icon="link.icon"
+        />
+      </NavDrawer>
     </div>
   </div>
 </template>
 
-<style scoped>
-.tab {
-  @apply px-6 flex flex-initial items-center hover:bg-slate-400 active:bg-slate-600 transition-colors;
-}
-</style>
+<style scoped></style>
