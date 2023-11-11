@@ -26,7 +26,7 @@ onMounted(() => {
       "
       :href="href"
     >
-      <Icon :name="icon" size="40" color="white" />
+      <Icon :name="icon" size="35" color="white" />
       {{ title }}
     </NuxtLink>
   </li>
