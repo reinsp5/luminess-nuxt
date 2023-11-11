@@ -10,7 +10,7 @@ import { PageLinks } from "@/helpers/pagelink";
       class="tab"
       :to="link.path"
     >
-      <component :is="link.icon" class="mx-2 w-8 h-8" />
+      <Icon class="mx-2" :name="link.icon" size="35" color="white" />
       {{ link.title }}
     </NuxtLink>
   </div>

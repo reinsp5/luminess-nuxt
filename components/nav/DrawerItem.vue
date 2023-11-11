@@ -17,7 +17,7 @@ onMounted(() => {
 
 <template>
   <li>
-    <a
+    <NuxtLink
       class="flex items-center py-4 px-4 rounded-md transition-colors text-xl"
       :class="
         isActive
@@ -26,9 +26,9 @@ onMounted(() => {
       "
       :href="href"
     >
-      <component :is="icon" class="mx-2 w-8 h-8" />
+      <Icon :name="icon" size="40" color="white" />
       {{ title }}
-    </a>
+    </NuxtLink>
   </li>
 </template>
 

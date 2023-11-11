@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { CloudArrowUpIcon, LockClosedIcon } from "@heroicons/vue/24/outline";
 
 // SEOメタ情報を設定
 const pageTitle = "チームLuminess Webサイト";
@@ -21,13 +20,13 @@ const features = [
     name: "Push to deploy",
     description:
       "Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.",
-    icon: CloudArrowUpIcon,
+    icon: "fluent:info-24-filled",
   },
   {
     name: "SSL certificates",
     description:
       "Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.",
-    icon: LockClosedIcon,
+    icon: "mingcute:group-fill",
   },
 ];
 </script>
@@ -66,14 +65,9 @@ const features = [
               >
                 <dt class="text-base font-semibold leading-7 text-gray-900">
                   <div
-                    class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600"
+                    class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#0C111B]"
                   >
-                    <component
-                      :is="feature.icon"
-                      class="h-6 w-6 text-white"
-                      color="white"
-                      aria-hidden="true"
-                    />
+                    <Icon :name="feature.icon" color="white" size="20" />
                   </div>
                   {{ feature.name }}
                 </dt>

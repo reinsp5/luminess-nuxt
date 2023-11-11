@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@nuxt/image",
     "nuxt-swiper",
+    "nuxt-icon",
   ],
   // Nitroの設定
   nitro: {
@@ -28,7 +29,7 @@ export default defineNuxtConfig({
   },
   // Swiperの設定
   swiper: {
-    prefix: "Swiper"
+    prefix: "Swiper",
   },
   runtimeConfig: {
     newt: {
