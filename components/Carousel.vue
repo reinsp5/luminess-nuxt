@@ -42,13 +42,13 @@ const { data: images } = await useAsyncData("carousel", async () => {
       :key="image._id"
     >
       <NuxtImg
-        :src="image.photo.src"
         provider="imagekit"
-        sizes="sm:640px md:760px lg:768px xl:1550px"
-        fit="pad_extract"
+        :src="image.photo.src"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 1920px"
+        width="3840"
+        height="2160"
+        format="avif"
         :alt="image.photo.fileName"
-        width="100%"
-        height="100%"
       />
     </SwiperSlide>
   </Swiper>
