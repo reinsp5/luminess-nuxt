@@ -48,6 +48,7 @@ const { data: images } = await useAsyncData("carousel", async () => {
         width="3840"
         height="2160"
         format="avif"
+        quality="80"
         :alt="image.photo.fileName"
       />
     </SwiperSlide>
