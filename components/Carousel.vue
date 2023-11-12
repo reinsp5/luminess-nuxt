@@ -44,7 +44,7 @@ const { data: images } = await useAsyncData("carousel", async () => {
       <NuxtImg
         provider="imagekit"
         :src="image.photo.src"
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 1920px"
+        sizes="100vw sm:50vw md:400px lg:800px xl:1200px"
         width="3840"
         height="2160"
         format="avif"
