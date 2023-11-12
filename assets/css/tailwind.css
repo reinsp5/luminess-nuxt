@@ -10,7 +10,3 @@ html,
 body {
   @apply w-full;
 }
-
-#__nuxt {
-  @apply w-full flex flex-col min-h-screen;
-}
