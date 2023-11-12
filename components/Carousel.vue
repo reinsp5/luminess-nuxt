@@ -38,7 +38,7 @@ const { data: images } = await useAsyncData("carousel", async () => {
   >
     <SwiperSlide
       class="swiper-slide"
-      v-for="image in images?.items"
+      v-for="(image, index) in images?.items"
       :key="image._id"
     >
       <NuxtImg
@@ -49,6 +49,7 @@ const { data: images } = await useAsyncData("carousel", async () => {
         height="2160"
         format="avif"
         quality="80"
+        :loading="index === 0 ? 'eager' : 'lazy'"
         :alt="image.photo.fileName"
       />
     </SwiperSlide>
