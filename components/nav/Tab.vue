@@ -19,6 +19,7 @@ const isActive = computed(() => route.path === props.href);
         : ['hover:bg-slate-600 ', 'active:bg-slate-800']
     "
     :to="props.href"
+    :aria-label="props.title + 'ページへ移動'"
   >
     <Icon class="mx-2" :name="props.icon" size="35" color="white" />
     {{ props.title }}

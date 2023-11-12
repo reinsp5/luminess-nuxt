@@ -7,6 +7,7 @@ const isDrawerOpen = useState("drawer-control");
     <button
       class="p-1 rounded-md hover:bg-slate-600 active:bg-slate-800 transition-colors"
       @click="isDrawerOpen = true"
+      aria-label="ドロワーを開く"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -40,6 +41,7 @@ const isDrawerOpen = useState("drawer-control");
       <button
         class="absolute top-4 left-4 p-1 rounded-md hover:bg-slate-600 active:bg-slate-800 transition-colors"
         @click="isDrawerOpen = false"
+        aria-label="ドロワーを閉じる"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

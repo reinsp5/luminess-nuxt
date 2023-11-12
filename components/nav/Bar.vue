@@ -6,7 +6,7 @@ import { PageLinks } from "@/helpers/pagelink";
   <div class="px-2 md:pl-8 md:pr-0 mx-auto">
     <div class="grid grid-cols-2 h-16 items-center">
       <div>
-        <NuxtLink to="/">
+        <NuxtLink to="/" aria-label="ホームページヘ移動">
           <NuxtImg
             width="200"
             height="40"

@@ -24,6 +24,7 @@ const route = useRoute();
       "
       :href="href"
       @click="isDrawerOpen = false"
+      :aria-label="title + 'ページへ移動'"
     >
       <Icon class="mx-2" :name="icon" size="35" color="white" />
       {{ title }}
