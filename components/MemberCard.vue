@@ -34,14 +34,12 @@ const posClass = (value: String) => {
       :alt="props.member.avatar.altText"
     />
     <div class="relative p-4 flex flex-col">
-      <div class="flex z-10">
-        <h2 class="text-3xl font-bold">{{ props.member.name }}</h2>
-        <div
-          class="w-fit py-1 px-4 text-white rounded-3xl ml-auto flex items-center"
-          :class="posClass(props.member.position.slug)"
-        >
-          {{ props.member.position.name }}
-        </div>
+      <h2 class="text-3xl font-bold">{{ props.member.name }}</h2>
+      <div
+        class="w-fit py-1 px-4 text-white rounded-3xl ml-auto flex items-center"
+        :class="posClass(props.member.position.slug)"
+      >
+        {{ props.member.position.name }}
       </div>
       <!-- 使用クラス -->
       <div class="mt-4 flex items-center z-10">

@@ -8,14 +8,22 @@ import { PageLinks } from "@/helpers/pagelink";
       <div>
         <NuxtLink to="/">
           <NuxtImg
-            width="180"
+            width="200"
             height="40"
             src="/images/luminess_logo_white_without_background.svg"
             alt="Luminess"
           />
         </NuxtLink>
       </div>
-      <NavTab class="h-full hidden md:flex md:justify-end" />
+      <div class="h-full hidden md:flex md:justify-end">
+        <NavTab
+          v-for="link in PageLinks"
+          :key="link.path"
+          :title="link.title"
+          :href="link.path"
+          :icon="link.icon"
+        />
+      </div>
       <NavDrawer class="z-50 flex justify-end md:hidden">
         <NavDrawerItem
           v-for="link in PageLinks"

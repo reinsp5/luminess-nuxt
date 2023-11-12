@@ -8,17 +8,17 @@
       <div class="text-white">Copyright&copy; Luminess 2022</div>
       <div>
         <a href="https://github.com/reinsp5" target="_blank">
-          <Icon class="mx-1" name="uil:github" color="white" size="35" />
+          <Icon class="mx-1" name="uil:github" color="white" size="32" />
         </a>
         <a href="https://twitter.com/reinsp5" target="_blank">
-          <Icon class="mx-1" name="akar-icons:x-fill" color="white" size="35" />
+          <Icon class="mx-1" name="akar-icons:x-fill" color="white" size="32" />
         </a>
         <a href="https://misskey.io/@reinsp5" target="_blank">
           <Icon
             class="mx-1"
             name="simple-icons:misskey"
             color="white"
-            size="35"
+            size="32"
           />
         </a>
       </div>

@@ -16,7 +16,7 @@ useSeoMeta({
 
 <template>
   <div class="container mx-auto p-4">
-    <h1 class="text-2xl">About</h1>
+    <h1 class="text-3xl font-bold">ABOUT</h1>
   </div>
 </template>
 

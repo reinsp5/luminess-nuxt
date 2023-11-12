@@ -1,23 +1,28 @@
 <script lang="ts" setup>
-import { PageLinks } from "@/helpers/pagelink";
+const props = defineProps<{
+  title: string;
+  href: string;
+  icon: any;
+}>();
+const route = useRoute();
+
+const isActive = computed(() => route.path === props.href);
+
 </script>
 
 <template>
-  <div>
-    <NuxtLink
-      v-for="link in PageLinks"
-      :key="link.path"
-      class="tab"
-      :to="link.path"
-    >
-      <Icon class="mx-2" :name="link.icon" size="35" color="white" />
-      {{ link.title }}
-    </NuxtLink>
-  </div>
+  <NuxtLink
+    class="px-6 flex flex-initial items-center transition-colors"
+    :class="
+      isActive
+        ? ['bg-slate-800']
+        : ['hover:bg-slate-600 ', 'active:bg-slate-800']
+    "
+    :to="props.href"
+  >
+    <Icon class="mx-2" :name="props.icon" size="35" color="white" />
+    {{ props.title }}
+  </NuxtLink>
 </template>
 
-<style scoped>
-.tab {
-  @apply px-6 flex flex-initial items-center hover:bg-slate-600 active:bg-slate-800 transition-colors;
-}
-</style>
+<style scoped></style>

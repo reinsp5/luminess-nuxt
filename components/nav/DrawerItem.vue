@@ -5,14 +5,12 @@ const props = defineProps<{
   icon: any;
 }>();
 
-const isActive = ref(false);
+const isDrawerOpen = useState("drawer-control");
+
+const isActive = computed(() => route.path === props.href);
 
 const route = useRoute();
 
-onMounted(() => {
-  // 現在のルートとhrefが一致しているかどうかをisActiveに反映する
-  isActive.value = route.path === props.href;
-});
 </script>
 
 <template>
@@ -25,6 +23,7 @@ onMounted(() => {
           : ['hover:bg-slate-600 ', 'active:bg-slate-800']
       "
       :href="href"
+      @click="isDrawerOpen = false"
     >
       <Icon class="mx-2" :name="icon" size="35" color="white" />
       {{ title }}
