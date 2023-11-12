@@ -4,12 +4,12 @@ import { PageLinks } from "@/helpers/pagelink";
 
 <template>
   <div class="px-2 md:pl-8 md:pr-0 mx-auto">
-    <div class="grid grid-cols-2 h-20 items-center">
+    <div class="grid grid-cols-2 h-16 items-center">
       <div>
         <NuxtLink to="/">
           <NuxtImg
-            width="200"
-            height="60"
+            width="180"
+            height="40"
             src="/images/luminess_logo_white_without_background.svg"
             alt="Luminess"
           />

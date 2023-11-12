@@ -20,69 +20,72 @@ const posClass = (value: String) => {
 </script>
 
 <template>
-  <div variant="outlined">
-    <div no-gutters>
-      <div cols="12" md="6">
-        <NuxtImg :src="props.member.avatar.src" />
+  <div
+    class="my-8 grid grid-cols-1 md:grid-cols-2 rounded-2xl border-2 overflow-hidden"
+  >
+    <NuxtImg
+      provider="imagekit"
+      :src="props.member.avatar.src"
+      sizes="100vw sm:50vw md:400px lg:800px xl:1200px xxl:1600px"
+      width="3840"
+      height="2160"
+      format="avif"
+      quality="80"
+      :alt="props.member.avatar.altText"
+    />
+    <div class="relative p-4 flex flex-col">
+      <div class="flex z-10">
+        <h2 class="text-3xl font-bold">{{ props.member.name }}</h2>
+        <div
+          class="w-fit py-1 px-4 text-white rounded-3xl ml-auto flex items-center"
+          :class="posClass(props.member.position.slug)"
+        >
+          {{ props.member.position.name }}
+        </div>
       </div>
-      <div cols="12" md="6" class="pa-4">
-        <!-- メンバー名 -->
-        <div class="flex">
-          <h1 class="w-max text-2xl lg:text-3xl xl:text-4xl font-bold">
-            {{ props.member.name }}
-          </h1>
-        </div>
-
-        <!-- ステータス情報 -->
-        <div class="ml-4 mt-8 lg:mt-10">
-          <!-- 使用クラス -->
-          <div class="mt-4 flex items-center">
-            <span class="inline-block w-30 text-md lg:text-lg mr-2"
-              >使用クラス</span
-            >
-            <NuxtImg
-              v-for="useClass in props.member.useClass"
-              :key="useClass._id"
-              :src="useClass.icon.src"
-              provider="imagekit"
-              sizes="sm:30px md:40px"
-              fit="pad_extract"
-              class="mx-2 w-7 h-7 lg:w-10 lg:h-10 inline"
-              :alt="useClass.name"
-            />
-          </div>
-          <!-- 使用プラットフォーム -->
-          <div class="mt-4 flex items-center">
-            <span class="inline-block w-30 text-md lg:text-lg mr-2"
-              >プレイ環境</span
-            >
-            <NuxtImg
-              v-for="usePlatform in props.member.platform"
-              :key="usePlatform._id"
-              :src="usePlatform.icon.src"
-              provider="imagekit"
-              sizes="sm:30px md:40px"
-              fit="pad_extract"
-              class="mx-2 w-7 h-7 lg:w-10 lg:h-10 inline"
-              :alt="usePlatform.name"
-            />
-          </div>
-          <!-- ポジション -->
-          <div class="mt-4 flex items-center">
-            <span class="inline-block w-30 text-md lg:text-lg mr-2"
-              >ポジション</span
-            >
-            <div
-            class="ml-4 py-1 px-4 text-white rounded-3xl"
-            :class="posClass(props.member.position.slug)"
-          >
-            {{ props.member.position.name }}
-          </div>
-          </div>
-        </div>
+      <!-- 使用クラス -->
+      <div class="mt-4 flex items-center z-10">
+        <span class="inline-block w-30 text-md lg:text-lg mr-2"
+          >使用クラス</span
+        >
+        <NuxtImg
+          v-for="useClass in props.member.useClass"
+          :key="useClass._id"
+          :src="useClass.icon.src"
+          provider="imagekit"
+          sizes="sm:30px md:40px"
+          fit="pad_extract"
+          class="mx-2 w-7 h-7 lg:w-10 lg:h-10 inline"
+          :alt="useClass.name"
+        />
+      </div>
+      <!-- 使用プラットフォーム -->
+      <div class="mt-4 flex items-center z-10">
+        <span class="inline-block w-30 text-md lg:text-lg mr-2"
+          >プレイ環境</span
+        >
+        <NuxtImg
+          v-for="usePlatform in props.member.platform"
+          :key="usePlatform._id"
+          :src="usePlatform.icon.src"
+          provider="imagekit"
+          sizes="sm:30px md:40px"
+          fit="pad_extract"
+          class="mx-2 w-7 h-7 lg:w-10 lg:h-10 inline"
+          :alt="usePlatform.name"
+        />
       </div>
     </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.arks {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+</style>
