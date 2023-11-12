@@ -6,7 +6,7 @@
   >
     <div class="flex flex-col justify-end items-end md:items-start">
       <div class="text-white">Copyright&copy; Luminess 2022</div>
-      <div>
+      <div class="my-4">
         <a href="https://github.com/reinsp5" target="_blank">
           <Icon class="mx-1" name="uil:github" color="white" size="32" />
         </a>
@@ -23,8 +23,8 @@
         </a>
       </div>
     </div>
-    <div class="flex justify-end">
-      <NuxtLink>
+    <div class="my-4 flex justify-end">
+      <NuxtLink to="/">
         <NuxtImg
           width="300"
           height="60"
