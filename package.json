@@ -19,6 +19,7 @@
     "@nuxt/image": "^1.0.0",
     "@vespaiach/axios-fetch-adapter": "^0.3.1",
     "newt-client-js": "^3.2.7",
-    "nuxt-swiper": "^1.2.2"
+    "nuxt-swiper": "^1.2.2",
+    "sass": "^1.69.5"
   }
 }

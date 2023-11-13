@@ -15,8 +15,8 @@ const isActive = computed(() => route.path === props.href);
     class="px-6 flex flex-initial items-center transition-colors"
     :class="
       isActive
-        ? ['bg-slate-800']
-        : ['hover:bg-slate-600 ', 'active:bg-slate-800']
+        ? ['bg-slate-700']
+        : ['hover:bg-slate-500 ', 'active:bg-slate-700']
     "
     :to="props.href"
     :aria-label="props.title + 'ページへ移動'"

@@ -19,8 +19,8 @@ const route = useRoute();
       class="flex items-center py-4 px-4 rounded-md transition-colors text-xl"
       :class="
         isActive
-          ? ['bg-slate-800']
-          : ['hover:bg-slate-600 ', 'active:bg-slate-800']
+          ? ['bg-slate-700']
+          : ['hover:bg-slate-500 ', 'active:bg-slate-700']
       "
       :href="href"
       @click="isDrawerOpen = false"

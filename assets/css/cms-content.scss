@@ -1,0 +1,21 @@
+.cms-content {
+  h1 {
+    @apply text-5xl font-bold border-l-[16px] border-amber-400 my-6 py-1 pl-2
+  }
+
+  h2 {
+    @apply text-3xl font-bold border-l-[16px] border-amber-400 my-6 py-1 pl-2
+  }
+
+  h3 {
+    @apply text-xl font-bold border-l-[16px] border-amber-400 mt-6 mb-2 py-1 pl-2
+  }
+
+  p {
+    @apply ml-4 text-base
+  }
+
+  ul {
+    @apply pl-8 my-2 list-disc
+  }
+}

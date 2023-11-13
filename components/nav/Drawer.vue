@@ -5,7 +5,7 @@ const isDrawerOpen = useState("drawer-control");
 <template>
   <div class="relative">
     <button
-      class="p-1 rounded-md hover:bg-slate-600 active:bg-slate-800 transition-colors"
+      class="p-1 rounded-md hover:bg-slate-500 active:bg-slate-700 transition-colors"
       @click="isDrawerOpen = true"
       aria-label="ドロワーを開く"
     >
@@ -26,7 +26,7 @@ const isDrawerOpen = useState("drawer-control");
     </button>
     <!-- Drawer Shadow -->
     <div
-      class="fixed top-0 left-0 w-screen h-screen bg-slate-600 transition-all"
+      class="fixed top-0 left-0 w-screen h-screen bg-slate-500 transition-all"
       :class="[
         isDrawerOpen ? 'visible' : 'invisible',
         isDrawerOpen ? 'opacity-50' : 'opacity-0',
@@ -39,7 +39,7 @@ const isDrawerOpen = useState("drawer-control");
       :class="[isDrawerOpen ? 'translate-x-0' : 'translate-x-full']"
     >
       <button
-        class="absolute top-4 left-4 p-1 rounded-md hover:bg-slate-600 active:bg-slate-800 transition-colors"
+        class="absolute top-4 left-4 p-1 rounded-md hover:bg-slate-500 active:bg-slate-700 transition-colors"
         @click="isDrawerOpen = false"
         aria-label="ドロワーを閉じる"
       >

@@ -38,6 +38,11 @@ export default defineNuxtConfig({
       cdnApiToken: process.env.NUXT_NEWT_CDN_API_TOKEN || "",
     },
   },
+  // CSSの設定
+  css: [
+    "@/assets/css/cms-content.scss"
+  ],
+  // アプリの設定
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
