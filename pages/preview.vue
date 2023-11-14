@@ -17,7 +17,7 @@ if (config.newt && secret !== config.newt.previewSecret) {
 }
 
 const { data } = await useAsyncData(`article-${slug}-preview`, async () => {
-  const { $newtClient } = useNuxtApp();
+  const { $newtPreviewClient } = useNuxtApp();
   return await $newtPreviewClient.getFirstContent<FixedPage>({
     appUid: "fixed-page",
     modelUid: "article",
