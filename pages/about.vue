@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type {} from "@/types/fixedpage"
+import type { FixedPage } from "@/types/fixedpage";
 // SEOメタ情報を設定
 const pageTitle = "Luminessおよび当サイトについて";
 const pageDescription = "チーム「Luminess」および当Webサイトに関する情報です。";
@@ -15,21 +15,21 @@ useSeoMeta({
 });
 
 // ページ内容取得
-const route = useRoute()
-const { slug } = route.params
+const route = useRoute();
+const { slug } = route.params;
 
 const { data } = await useAsyncData(`article-${slug}`, async () => {
-  const { $newtClient } = useNuxtApp()
+  const { $newtClient } = useNuxtApp();
   return await $newtClient.getFirstContent<FixedPage>({
-    appUid: 'fixed-page',
-    modelUid: 'article',
+    appUid: "fixed-page",
+    modelUid: "article",
     query: {
       slug,
-      select: ['_id', 'title', 'slug', 'body']
-    }
-  })
-})
-const article = data.value
+      select: ["_id", "title", "slug", "body"],
+    },
+  });
+});
+const article = data.value;
 </script>
 
 <template>

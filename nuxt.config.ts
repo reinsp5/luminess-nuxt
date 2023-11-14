@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  ssr: true,
   devtools: { enabled: true },
   modules: [
     "@nuxtjs/tailwindcss",
@@ -12,6 +13,7 @@ export default defineNuxtConfig({
     preset: "cloudflare-pages",
     prerender: {
       crawlLinks: true,
+      ignore: ["/preview"],
     },
   },
   // NuxtImageの設定
@@ -36,12 +38,11 @@ export default defineNuxtConfig({
       spaceUid: process.env.NUXT_NEWT_SPACE_UID || "",
       apiToken: process.env.NUXT_NEWT_API_TOKEN || "",
       cdnApiToken: process.env.NUXT_NEWT_CDN_API_TOKEN || "",
+      previewSecret: process.env.NUXT_NEWT_PREVIEW_SECRET || "",
     },
   },
   // CSSの設定
-  css: [
-    "@/assets/css/cms-content.scss"
-  ],
+  css: ["@/assets/css/cms-content.scss"],
   // アプリの設定
   app: {
     pageTransition: { name: "page", mode: "out-in" },

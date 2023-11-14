@@ -7,11 +7,18 @@ export default defineNuxtPlugin(() => {
     spaceUid: config.newt.spaceUid,
     token: config.newt.cdnApiToken,
     apiType: "cdn",
-    adapter:fetchAdapter,
+    adapter: fetchAdapter,
+  });
+  const newtPreviewClient = createClient({
+    spaceUid: config.newt.spaceUid,
+    token: config.newt.apiToken,
+    apiType: "api",
+    adapter: fetchAdapter,
   });
   return {
     provide: {
       newtClient,
+      newtPreviewClient,
     },
   };
 });
