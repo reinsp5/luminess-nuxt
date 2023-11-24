@@ -21,12 +21,12 @@ const posClass = (value: String) => {
 
 <template>
   <div
-    class="my-8 grid grid-cols-1 md:grid-cols-2 rounded-2xl border-2 overflow-hidden"
+    class="my-8 grid grid-cols-1 lg:grid-cols-2 rounded-2xl border-2 overflow-hidden"
   >
     <NuxtImg
       provider="imagekit"
       :src="props.member.avatar.src"
-      sizes="100vw sm:50vw md:400px lg:800px xl:1200px xxl:1600px"
+      sizes="100vw sm:50vw lg:400px lg:800px xl:1200px xxl:1600px"
       width="3840"
       height="2160"
       format="avif"
@@ -34,7 +34,7 @@ const posClass = (value: String) => {
       :alt="props.member.avatar.altText"
     />
     <div class="relative p-4 flex flex-col">
-      <h2 class="text-3xl font-bold">{{ props.member.name }}</h2>
+      <h2 class="text-3xl font-bold" :class="props.member.position.slug">{{ props.member.name }}</h2>
       <div
         class="w-fit py-1 px-4 text-white rounded-3xl ml-auto flex items-center"
         :class="posClass(props.member.position.slug)"
@@ -51,7 +51,7 @@ const posClass = (value: String) => {
           :key="useClass._id"
           :src="useClass.icon.src"
           provider="imagekit"
-          sizes="sm:30px md:40px"
+          sizes="sm:30px lg:40px"
           fit="pad_extract"
           class="mx-2 w-7 h-7 lg:w-10 lg:h-10 inline"
           :alt="useClass.name"
@@ -67,7 +67,7 @@ const posClass = (value: String) => {
           :key="usePlatform._id"
           :src="usePlatform.icon.src"
           provider="imagekit"
-          sizes="sm:30px md:40px"
+          sizes="sm:30px lg:40px"
           fit="pad_extract"
           class="mx-2 w-7 h-7 lg:w-10 lg:h-10 inline"
           :alt="usePlatform.name"

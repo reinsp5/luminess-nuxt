@@ -3,7 +3,7 @@ import { PageLinks } from "@/helpers/pagelink";
 </script>
 
 <template>
-  <div class="px-2 md:pl-8 md:pr-0 mx-auto">
+  <div class="px-2 lg:pl-8 lg:pr-0 mx-auto">
     <div class="grid grid-cols-2 h-16 items-center">
       <div>
         <NuxtLink to="/" aria-label="ホームページヘ移動">
@@ -15,7 +15,7 @@ import { PageLinks } from "@/helpers/pagelink";
           />
         </NuxtLink>
       </div>
-      <div class="h-full hidden md:flex md:justify-end">
+      <div class="h-full hidden lg:flex lg:justify-end">
         <NavTab
           v-for="link in PageLinks"
           :key="link.path"
@@ -24,7 +24,7 @@ import { PageLinks } from "@/helpers/pagelink";
           :icon="link.icon"
         />
       </div>
-      <NavDrawer class="z-50 flex justify-end md:hidden">
+      <NavDrawer class="z-50 flex justify-end lg:hidden">
         <NavDrawerItem
           v-for="link in PageLinks"
           :key="link.path"

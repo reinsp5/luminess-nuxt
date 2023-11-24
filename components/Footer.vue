@@ -2,9 +2,9 @@
 
 <template>
   <footer
-    class="px-6 py-8 grid grid-cols-1 md:grid-cols-2 h-auto items-center bg-[#0C111B]"
+    class="px-6 py-8 grid grid-cols-1 lg:grid-cols-2 h-auto items-center bg-primary-950"
   >
-    <div class="flex flex-col justify-end items-end md:items-start">
+    <div class="flex flex-col justify-end items-end lg:items-start">
       <div class="text-white">Copyright&copy; Luminess 2022</div>
       <div class="my-4">
         <a href="https://github.com/reinsp5" target="_blank" aria-label="レインのGithubプロフィール">

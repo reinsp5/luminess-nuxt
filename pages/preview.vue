@@ -40,7 +40,7 @@ useHead({
 </script>
 
 <template>
-  <div class="container mx-auto p-4 md:p-8 cms-content">
+  <div class="container mx-auto p-4 lg:p-8 cms-content">
     <h1 class="text-3xl font-bold">{{ article.title }}</h1>
     <!-- eslint-disable-next-line vue/no-v-html -->
     <div v-html="article?.body" />

@@ -1,21 +1,55 @@
 .cms-content {
   h1 {
-    @apply text-5xl font-bold border-l-[16px] border-amber-400 my-6 py-1 pl-2
+    @apply text-4xl font-bold border-l-[16px] border-primary-400 my-6 py-1 pl-2;
   }
 
   h2 {
-    @apply text-3xl font-bold border-l-[16px] border-amber-400 my-6 py-1 pl-2
+    @apply text-2xl font-bold border-l-[16px] border-primary-500 my-6 py-1 pl-2;
   }
 
   h3 {
-    @apply text-xl font-bold border-l-[16px] border-amber-400 mt-6 mb-2 py-1 pl-2
+    @apply text-xl font-bold border-l-[16px] border-primary-600 mt-6 mb-2 py-1 pl-2;
+  }
+
+  h4 {
+    @apply text-lg font-bold border-l-[16px] border-primary-700 mt-6 mb-2 py-1 pl-2;
+  }
+
+  h5 {
+    @apply text-base font-bold;
   }
 
   p {
-    @apply ml-4 text-base
+    @apply ml-4 text-base;
   }
 
   ul {
-    @apply pl-8 my-2 list-disc
+    @apply pl-8 my-2 list-disc;
+  }
+}
+
+.cms-member {
+  h1 {
+    @apply text-4xl font-bold border-l-[16px] border-primary-400 my-6 py-1 pl-2;
+  }
+
+  h2 {
+    @apply text-2xl font-bold border-l-[16px] py-1 pl-2;
+  }
+
+  .master {
+    @apply border-blue-800;
+  }
+
+  .manager {
+    @apply border-teal-800;
+  }
+
+  .common {
+    @apply border-rose-800;
+  }
+
+  .visitor {
+    @apply border-blue-500;
   }
 }

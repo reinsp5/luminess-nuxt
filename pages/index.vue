@@ -51,7 +51,7 @@ const features = [
                 <NuxtLink :to="feature.href" :aria-label="feature.name + 'ページへ移動'">
                   <dt class="text-base font-semibold leading-7 text-gray-900">
                     <div
-                      class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#0C111B]"
+                      class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary-950"
                     >
                       <Icon :name="feature.icon" color="white" size="20" />
                     </div>

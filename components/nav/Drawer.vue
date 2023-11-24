@@ -35,7 +35,7 @@ const isDrawerOpen = useState("drawer-control");
     />
     <!-- Drawer -->
     <nav
-      class="fixed top-0 right-0 bg-[#0C111B] shadow-md h-screen w-96 flex px-4 py-8 duration-300"
+      class="fixed top-0 right-0 bg-primary-950 shadow-md h-screen w-96 flex px-4 py-8 duration-300"
       :class="[isDrawerOpen ? 'translate-x-0' : 'translate-x-full']"
     >
       <button

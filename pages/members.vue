@@ -31,7 +31,7 @@ const { data: members } = await useAsyncData("members", async () => {
 </script>
 
 <template>
-  <div class="container mx-auto p-4">
+  <div class="container mx-auto p-4 cms-member">
     <h1 class="text-3xl font-bold">メンバー一覧</h1>
     <MemberCard v-for="member in members?.items" :key="member._id" :member="member" />
   </div>

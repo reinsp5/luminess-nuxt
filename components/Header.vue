@@ -12,7 +12,7 @@ useHead({
 </script>
 
 <template>
-  <header class="bg-[#0C111B] text-white">
+  <header class="bg-primary-950 text-white">
     <NavBar />
   </header>
 </template>
